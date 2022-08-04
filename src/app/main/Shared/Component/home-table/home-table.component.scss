@@ -1,0 +1,30 @@
+$tableHeaderAndFooterColor: rgb(214, 214, 214);
+$tableBorderColor: solid 1px rgb(112, 112, 112);
+
+.table {
+    width: 100%;
+
+    tr {
+        height: 45px;
+    }
+
+    th,td {
+        padding-left: 5px;
+        border:  $tableBorderColor;
+    }
+
+    .header {
+        background-color: $tableHeaderAndFooterColor;
+        border: $tableBorderColor;
+    }
+
+    .footer{
+        background-color: $tableHeaderAndFooterColor;
+        border: $tableBorderColor;  
+
+        th{
+            border-left: none;
+            border-right: none;
+        }
+    }
+}

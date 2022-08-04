@@ -1,0 +1,35 @@
+<div class="dashboard-panel">
+  <span class="last-update">Ultima atualização: 00/00/0000</span>
+  <div class="title">Dashboard da minha célula</div>
+  <div class="stepper-area"></div>
+  <nav class="months-menu">
+    <div class="month-menu-item"><a>Jan</a></div>
+    <div class="month-menu-item">Fev</div>
+    <div class="month-menu-item">Mar</div>
+    <div class="month-menu-item">Abr</div>
+    <div class="month-menu-item">Mai</div>
+    <div class="month-menu-item">Jun</div>
+    <div class="month-menu-item">Jul</div>
+    <div class="month-menu-item">Ago</div>
+    <div class="month-menu-item">Set</div>
+    <div class="month-menu-item">Out</div>
+    <div class="month-menu-item">Nov</div>
+    <div class="month-menu-item">Dez</div>
+  </nav>
+</div>
+
+<div class="mainBody">
+  <app-home-table></app-home-table>
+
+
+  <div>
+    <h1>Teste</h1>
+  
+    <p>Texto: {{texto}}</p>
+    <p>Numero: {{numero}}</p>
+    <p>Data: {{data}}</p>
+  
+    <a [routerLink]="['/login']">login</a>
+    <a [routerLink]="['/main']">home</a>
+  </div>
+</div>

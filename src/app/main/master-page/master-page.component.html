@@ -1,0 +1,79 @@
+<mat-toolbar class="matToolbar">
+    <div class="logo">
+        <span>Gerdau</span>
+    </div>
+    <div class="endToolbar">
+        <select class="form-select alignmentEnd" name="" id="">
+            <option value="Alexandre">Alexandre</option>
+        </select>
+    </div>
+</mat-toolbar>
+
+
+
+<mat-sidenav-container class="sidenav-container" [hasBackdrop]="true">
+    <mat-sidenav #drawer  class="sidenav" opened="false" mode="over">
+        
+        <div class="sidenav-top">
+            <a class="sidenav-item-close" (click)="drawer.toggle()">
+                <mat-icon class="sidenav-icon">close</mat-icon>
+                <span>Menu</span>
+            </a>
+            <a class="sidenav-item">
+                <mat-icon class="sidenav-icon">space_dashboard</mat-icon>
+                <span>Dashboard da minha célula</span>
+            </a>
+        </div>
+
+        <div class="sidenav-bottom">
+            <a class="sidenav-item" (click)="drawer.toggle()">
+                <mat-icon class="sidenav-icon">chat_bubble</mat-icon>
+                <span>Help Desk</span>
+            </a>
+            <a class="sidenav-item">
+                <mat-icon class="sidenav-icon">info</mat-icon>
+                <span>Orientações</span>
+            </a>
+            <a class="sidenav-item">
+                <mat-icon class="sidenav-icon">diversity_3</mat-icon>
+                <span>Cultura Gerdau</span>
+            </a>
+        </div>
+
+
+    </mat-sidenav>
+
+    <mat-sidenav-content class="sidenav-content">
+
+        <div class="sideMenu">
+
+            <div class="topIcons">
+                <a (click)="drawer.toggle()" class="sideItem">
+                    <mat-icon>menu</mat-icon>
+                </a>
+
+                <a class="sideItem">
+                    <mat-icon>space_dashboard</mat-icon>
+                </a>
+
+            </div>
+
+            <div class="bottomIcons">
+                <a class="sideItem">
+                    <mat-icon>chat_bubble</mat-icon>
+                </a>
+
+                <a class="sideItem">
+                    <mat-icon>info</mat-icon>
+                </a>
+
+                <a class="sideItem">
+                    <mat-icon>diversity_3</mat-icon>
+                </a>
+            </div>
+        </div>
+        <div class="router">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

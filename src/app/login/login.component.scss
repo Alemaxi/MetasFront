@@ -1,0 +1,64 @@
+$fieldsHeight: 54px;
+$borderRadius: 5px 5px 5px 5px;
+
+.loginContainer {
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+.formContainer {
+    height: 100%;
+    width: 100%;
+    background-color: #003366;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.label {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 3px;
+    font-family: Source Sans Pro;
+}
+
+.elementsHeight{
+    height: $fieldsHeight;
+}
+
+.textField{
+    @extend .elementsHeight;
+
+    width: 100%;
+    margin-bottom: 7px;
+    border-radius: $borderRadius;
+    padding-left: 15px;
+    font-size: 18px;
+    border: none;
+}
+
+.textField:hover {
+    outline: 2px solid #009dff;
+}
+
+.textField:focus {
+    outline: 2px solid #009dff;
+}
+
+.btnLogin{
+    @extend .elementsHeight;
+    width: 100%;
+    background-color: #0069AC;
+    color: white;
+    margin-top: 20px;
+    border: none;
+    border-radius: $borderRadius;
+    font-size: 18px;
+    font-family: Work Sans;
+}
+
+.btnLogin:hover {
+    background-color: #01446e;
+}
