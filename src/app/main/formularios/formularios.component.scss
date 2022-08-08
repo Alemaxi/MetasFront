@@ -1,0 +1,21 @@
+@import '../shared/css/general/general-header.scss';
+@import '../shared/css/general/general-body.scss';
+@import '../Shared/css/general/general-table.scss';
+@import '../Shared/css/general/general-pagination.scss';
+
+
+.formulario-header{
+    @extend .general-header;
+}
+
+.formulario-body{
+    @extend .general-body;
+}
+
+.formulario-table{
+    @extend .general-table;
+}
+
+.formulario-pagination{
+    @extend .general-pagination;
+}
