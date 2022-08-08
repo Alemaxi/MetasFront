@@ -1,0 +1,56 @@
+$color1: #0069AC;
+$color2: white;
+
+.video-box{
+    width: 100%;
+    height: 270px;
+    background-color: black;
+}
+
+.article-area{
+    font-family: work sans;
+    padding: 30px;
+}
+
+section{
+    font-size: 14px;
+    font-family: work sans;
+    margin-bottom: 20px;
+}
+
+.header-article{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.print-button{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    padding: 3px 20px;
+    border-radius: 5px;
+    background-color: $color1;
+}
+
+
+.test {
+    background-color: blue;
+    width: 20px;
+    height: 20px;
+    margin-left: 50px;
+}
+
+.box{
+    width: 10px;
+    height: 10px;
+    background-color: black;
+}
+
+.test::after{
+    content: "<div class='box'></div>";
+    width: 30px;
+    height: 5px;
+}

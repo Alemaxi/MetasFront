@@ -37,6 +37,7 @@ $color4: #b2dbf5;
 
 .router {
     width: 100%;
+    overflow: auto;
 }
 
 .sideMenu {
@@ -71,7 +72,7 @@ $color4: #b2dbf5;
     width: 100%;
 
     .sidenav {
-        width: 18%;
+        width: 20%;
 
         .sidenav-top{
             width: 100%;
@@ -103,7 +104,9 @@ $color4: #b2dbf5;
             }
         }
 
-
+        .sidenav-item:focus{
+            outline: none;
+        }
         .sidenav-item:hover {
             background-color: $color4;
         }

@@ -19,9 +19,60 @@
                 <mat-icon class="sidenav-icon">close</mat-icon>
                 <span>Menu</span>
             </a>
-            <a class="sidenav-item">
+            <a class="sidenav-item" 
+                [routerLink]="['/main']" 
+                (click)="drawer.toggle()"
+            >
                 <mat-icon class="sidenav-icon">space_dashboard</mat-icon>
                 <span>Dashboard da minha célula</span>
+            </a>
+
+            <a class="sidenav-item" 
+                [routerLink]="['/main','minhacelula']" 
+                (click)="drawer.toggle()"
+            >
+                <mat-icon class="sidenav-icon">group_work</mat-icon>
+                <span>Minha celula</span>
+            </a>
+
+            <a class="sidenav-item" 
+                [routerLink]="['/main','simulador']" 
+                (click)="drawer.toggle()"
+            >
+                <mat-icon class="sidenav-icon">build_circle</mat-icon>
+                <span>Simular Dashboard</span>
+            </a>
+            
+            <a class="sidenav-item" 
+                [routerLink]="['/main','planejamento']" 
+                (click)="drawer.toggle()"
+            >
+                <mat-icon class="sidenav-icon">calendar_view_week</mat-icon>
+                <span>Planejamento Metas</span>
+            </a>
+            
+            <a class="sidenav-item" 
+                [routerLink]="['/main','historico']" 
+                (click)="drawer.toggle()"
+            >
+                <mat-icon class="sidenav-icon">history_edu</mat-icon>
+                <span>Histórico de alterações</span>
+            </a>
+            
+            <a class="sidenav-item" 
+                [routerLink]="['/main','status']"
+                (click)="drawer.toggle()"
+            >
+                <mat-icon class="sidenav-icon">summarize</mat-icon>
+                <span>Status Metas</span>
+            </a>
+
+            <a class="sidenav-item" 
+                [routerLink]="['/main','formularios']"
+                (click)="drawer.toggle()"
+            >
+                <mat-icon class="sidenav-icon">assignment</mat-icon>
+                <span>Formulários</span>
             </a>
         </div>
 
@@ -30,11 +81,11 @@
                 <mat-icon class="sidenav-icon">chat_bubble</mat-icon>
                 <span>Help Desk</span>
             </a>
-            <a class="sidenav-item">
+            <a class="sidenav-item" [routerLink]="['/main','orientacoes']">
                 <mat-icon class="sidenav-icon">info</mat-icon>
                 <span>Orientações</span>
             </a>
-            <a class="sidenav-item">
+            <a class="sidenav-item" href="../../../assets/pdf/manualGestão.pdf" target="_blank">
                 <mat-icon class="sidenav-icon">diversity_3</mat-icon>
                 <span>Cultura Gerdau</span>
             </a>
@@ -52,8 +103,32 @@
                     <mat-icon>menu</mat-icon>
                 </a>
 
-                <a class="sideItem">
+                <a class="sideItem" [routerLink]="['/main']">
                     <mat-icon>space_dashboard</mat-icon>
+                </a>
+                
+                <a class="sideItem" [routerLink]="['/main','minhacelula']">
+                    <mat-icon>group_work</mat-icon>
+                </a>
+                
+                <a class="sideItem" [routerLink]="['/main','simulador']">
+                    <mat-icon>build_circle</mat-icon>
+                </a>
+                
+                <a class="sideItem" [routerLink]="['/main','planejamento']">
+                    <mat-icon>calendar_view_week</mat-icon>
+                </a>
+                
+                <a class="sideItem" [routerLink]="['/main','historico']">
+                    <mat-icon>history_edu</mat-icon>
+                </a>
+                
+                <a class="sideItem" [routerLink]="['/main','status']">
+                    <mat-icon>summarize</mat-icon>
+                </a>
+
+                <a class="sideItem" [routerLink]="['/main','formularios']">
+                    <mat-icon>assignment</mat-icon>
                 </a>
 
             </div>
@@ -63,11 +138,11 @@
                     <mat-icon>chat_bubble</mat-icon>
                 </a>
 
-                <a class="sideItem">
+                <a class="sideItem" [routerLink]="['/main','orientacoes']">
                     <mat-icon>info</mat-icon>
                 </a>
 
-                <a class="sideItem">
+                <a class="sideItem" href="../../../assets/pdf/manualGestão.pdf" target="_blank">
                     <mat-icon>diversity_3</mat-icon>
                 </a>
             </div>
