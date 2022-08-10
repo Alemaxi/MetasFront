@@ -1,3 +1,5 @@
+@import '../Shared/css/general/general-inputs.scss';
+
 $color1: #0578BE;
 $color2: white;
 $color3: #0069AC;
@@ -21,10 +23,7 @@ $color4: #b2dbf5;
     }
 
     .form-select {
-        height: 41px;
-        width: 25%;
-        font-size: 18px;
-        font-family: Work Sans;
+        @extend .general-control;
     }
 }
 

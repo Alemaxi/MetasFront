@@ -1,0 +1,12 @@
+$color1: #0069AC;
+$color2: white;
+
+.general-button{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: $color2;
+    padding: 3px 20px;
+    border-radius: 5px;
+    background-color: $color1;
+}

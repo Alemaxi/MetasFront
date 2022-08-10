@@ -1,12 +1,15 @@
 $color1: white;
 
 .general-header {
+    display: flex;
     width: 100%;
     padding: 35px;
     background-color: $color1;
 
     h1 {
         font-family: work sans;
+        font-size: 30px;
+        margin-bottom: 1.5px;
     }
 
     span {

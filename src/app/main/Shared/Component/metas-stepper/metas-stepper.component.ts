@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-metas-stepper',
@@ -9,7 +9,12 @@ export class MetasStepperComponent implements OnInit {
 
   constructor() { }
 
+  @Input() status:number = 0;
+
   ngOnInit(): void {
   }
 
+  biggerOrEqualTo(num: number): boolean {
+    return !(num <= this.status);
+  }
 }

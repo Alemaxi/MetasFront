@@ -1,14 +1,17 @@
+@import '../Shared/css/general/general-header.scss';
+@import '../Shared/css/general/general-body.scss';
+
+.home-header{
+    @extend .general-header;
+
+    padding-bottom: 0px;
+}
+
 .dashboard-panel {
     display: flex;
     flex-direction: column;
-    padding-top: 15px;
-    padding-left: 10px;
     width: 100%;
     background-color: none;
-
-    .last-update{
-        margin-left: 30px;
-    }
 
     .title {
         font-size: 25pt;
@@ -41,9 +44,8 @@
 }
 
 
-.mainBody{
-    width: 100%;
-    padding: 15px 30px;
+.home-body{
+    @extend .general-body;
 }
 
 .homeTable {

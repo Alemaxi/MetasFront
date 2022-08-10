@@ -1,5 +1,21 @@
+$color1:#003366;
+$color2: #d3d3d3;
+
 .circle{
-    fill:none;
-    stroke: blue;
+    fill:$color1;
     stroke-width: 2px;
+}
+
+.line{
+    stroke: $color1;
+    stroke-width: 2px;
+}
+
+.unavailable{
+    fill: $color2;
+    stroke: $color2;
+}
+
+.text-unavailable{
+    color: $color2;
 }

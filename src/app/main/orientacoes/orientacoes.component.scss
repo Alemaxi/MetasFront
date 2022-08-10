@@ -1,3 +1,5 @@
+@import '../shared/css/general/general-button.scss';
+
 $color1: #0069AC;
 $color2: white;
 
@@ -26,13 +28,7 @@ section{
 }
 
 .print-button{
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    padding: 3px 20px;
-    border-radius: 5px;
-    background-color: $color1;
+    @extend .general-button;
 }
 
 

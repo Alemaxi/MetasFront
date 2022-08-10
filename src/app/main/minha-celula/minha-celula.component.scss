@@ -1,0 +1,42 @@
+@import '../Shared/css/general/general-header.scss';
+@import '../Shared/css/general/general-body.scss';
+@import '../Shared/css/general/general-table.scss';
+@import '../Shared/css/general/general-button.scss';
+
+
+.celula-header {
+    @extend .general-header;
+
+    .left-header{
+        width: 25%;
+    }
+
+    .mid-header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 15px;
+        width: 30%;
+    }
+
+    .right-header{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 45%;
+    }
+}
+
+.celula-button{
+    @extend .general-button;
+
+    margin-bottom: 10px;
+}
+
+.celula-body{
+    @extend .general-body;
+}
+
+.celula-table{
+    @extend .general-table;
+}

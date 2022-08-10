@@ -1,24 +1,27 @@
-<div class="dashboard-panel">
-  <span class="last-update">Ultima atualização: 00/00/0000</span>
-  <div class="title">Dashboard da minha célula</div>
-  <app-metas-stepper style="margin-bottom: 25px;"></app-metas-stepper>
-  <nav class="months-menu">
-    <div class="month-menu-item"><a>Jan</a></div>
-    <div class="month-menu-item">Fev</div>
-    <div class="month-menu-item">Mar</div>
-    <div class="month-menu-item">Abr</div>
-    <div class="month-menu-item">Mai</div>
-    <div class="month-menu-item">Jun</div>
-    <div class="month-menu-item">Jul</div>
-    <div class="month-menu-item">Ago</div>
-    <div class="month-menu-item">Set</div>
-    <div class="month-menu-item">Out</div>
-    <div class="month-menu-item">Nov</div>
-    <div class="month-menu-item">Dez</div>
-  </nav>
+<div class="home-header">
+  <div class="dashboard-panel">
+    <span class="last-update">Ultima atualização: 00/00/0000</span>
+    <div class="title">Dashboard da minha célula</div>
+    <app-metas-stepper [status]="4" style="margin-bottom: 25px;"></app-metas-stepper>
+    <nav class="months-menu">
+      <div class="month-menu-item"><a>Jan</a></div>
+      <div class="month-menu-item">Fev</div>
+      <div class="month-menu-item">Mar</div>
+      <div class="month-menu-item">Abr</div>
+      <div class="month-menu-item">Mai</div>
+      <div class="month-menu-item">Jun</div>
+      <div class="month-menu-item">Jul</div>
+      <div class="month-menu-item">Ago</div>
+      <div class="month-menu-item">Set</div>
+      <div class="month-menu-item">Out</div>
+      <div class="month-menu-item">Nov</div>
+      <div class="month-menu-item">Dez</div>
+    </nav>
+  </div>
+
 </div>
 
-<div class="mainBody">
+<div class="home-body">
   <app-home-table></app-home-table>
 
 

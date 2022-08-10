@@ -1,0 +1,50 @@
+@import '../Shared/css/general/general-header.scss';
+@import '../Shared/css/general/general-body.scss';
+@import '../Shared/css/general/general-inputs.scss';
+
+.simulador-header{
+    @extend .general-header;
+
+    .header-column{
+        display:flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .header-fields{
+        display: flex;
+        width: 100%;
+    }
+
+    .form-area{
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        margin-right: 20px;
+
+        label{
+            font-family: work sans;
+            margin-top: 5px;
+            font-size: 11px;
+        }
+
+        input {
+            @extend .general-control;
+        }
+        
+        .header-status{
+            @extend .general-control;
+            display: flex;
+            align-items: center;
+            background-color: rgb(219, 219, 219)
+        }
+
+        select {
+            @extend .general-control;
+        }
+    }
+}
+
+.simulador-body{
+    @extend .general-body;
+}
