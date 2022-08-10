@@ -1,34 +1,38 @@
 <table class="table">
     <tr>
-        <th>Collumn 1</th>
-        <th>Collumn 2</th>
-        <th>Collumn 3</th>
-        <th>Collumn 4</th>
+        <th>Indicador</th>
+        <th>Un. de Medida</th>
+        <th>Frequencia</th>
+        <th>Peso</th>
+        <th>Mínimo</th>
+        <th>Planejado</th>
+        <th>Desafio</th>
+        <th>Resultado</th>
+        <th>Simulação (SAL)</th>
     </tr>
 
-    <tr>
-        <td>Data 1</td>
-        <td>Data 2</td>
-        <td>Data 3</td>
-        <td>Data 4</td>
+    <tr *ngFor="let item of itemList">
+        <td>{{item.peso}}</td>
+        <td>{{item.unidadeMedida}}</td>
+        <td>{{item.frequencia}}</td>
+        <td>{{item.peso}}</td>
+        <td>{{item.minimo}}</td>
+        <td>{{item.planejado}}</td>
+        <td>{{item.desafio}}</td>
+        <td>{{item.resultado}}</td>
+        <td>{{item.simulacao}}</td>
     </tr>
-    <tr>
-        <td>Data 1</td>
-        <td>Data 2</td>
-        <td>Data 3</td>
-        <td>Data 4</td>
-    </tr>
-    <tr>
-        <td>Data 1</td>
-        <td>Data 2</td>
-        <td>Data 3</td>
-        <td>Data 4</td>
-    </tr>
+    
     
     <tr>
         <th class="resumo">Total</th>
         <th class="resumo"></th>
-        <th class="resumo">Collumn 3</th>
+        <th class="resumo">{{GetFrequenciaTotal()}}</th>
+        <th class="resumo"></th>
+        <th class="resumo"></th>
+        <th class="resumo"></th>
+        <th class="resumo"></th>
+        <th class="resumo"></th>
         <th class="resumo"></th>
     </tr>
 </table>
