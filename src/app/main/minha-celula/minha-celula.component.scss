@@ -21,8 +21,8 @@
 
     .right-header{
         display: flex;
-        flex-direction: column;
-        align-items: flex-end;
+        flex-direction: row-reverse;
+        align-items: center;
         width: 45%;
     }
 }
@@ -30,7 +30,12 @@
 .celula-button{
     @extend .general-button;
 
-    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.ataCollor-button{
+    background-color: #ECF2F6;
+    color: #244577;
 }
 
 .celula-body{

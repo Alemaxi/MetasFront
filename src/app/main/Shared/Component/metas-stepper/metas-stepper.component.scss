@@ -1,8 +1,15 @@
 $color1:#003366;
 $color2: #d3d3d3;
 
-.circle{
-    fill:$color1;
+.circle{    
+    fill: $color1;
+    stroke:$color1;
+    stroke-width: 2px;
+}
+
+.current{
+    fill: none;
+    stroke:$color1;
     stroke-width: 2px;
 }
 
@@ -12,10 +19,14 @@ $color2: #d3d3d3;
 }
 
 .unavailable{
-    fill: $color2;
+    fill: none;
     stroke: $color2;
 }
 
 .text-unavailable{
-    color: $color2;
+    fill: $color2;
+}
+
+.text {
+    fill: $color1;
 }

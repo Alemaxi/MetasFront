@@ -8,6 +8,9 @@
             <option value="Bruno">Bruno</option>
             <option value="Isabella">Isabella</option>
         </select>
+        <a class="notification-button" matBadge="4" matBadgeColor="warn">
+            <mat-icon>notifications</mat-icon>
+        </a>
     </div>
 </mat-toolbar>
 
@@ -26,7 +29,7 @@
                 (click)="drawer.toggle()"
             >
                 <mat-icon class="sidenav-icon">space_dashboard</mat-icon>
-                <span>Dashboard da minha célula</span>
+                <span>Dashboard Formulário Metas</span>
             </a>
 
             <a class="sidenav-item" 
@@ -58,15 +61,15 @@
                 (click)="drawer.toggle()"
             >
                 <mat-icon class="sidenav-icon">history_edu</mat-icon>
-                <span>Histórico de alterações</span>
+                <span>Histórico de solicitações</span>
             </a>
-            
+
             <a class="sidenav-item" 
-                [routerLink]="['/main','status']"
+                [routerLink]="['/main','historico']" 
                 (click)="drawer.toggle()"
             >
-                <mat-icon class="sidenav-icon">summarize</mat-icon>
-                <span>Status Metas</span>
+                <mat-icon class="sidenav-icon">watch</mat-icon>
+                <span>Cronograma Metas</span>
             </a>
 
             <a class="sidenav-item" 
@@ -74,7 +77,15 @@
                 (click)="drawer.toggle()"
             >
                 <mat-icon class="sidenav-icon">assignment</mat-icon>
-                <span>Formulários</span>
+                <span>Formulário Metas</span>
+            </a>
+
+            <a class="sidenav-item" 
+                [routerLink]="['/main','formularios']"
+                (click)="drawer.toggle()"
+            >
+                <mat-icon class="sidenav-icon">settings</mat-icon>
+                <span>Configurações</span>
             </a>
         </div>
 
@@ -125,12 +136,15 @@
                     <mat-icon>history_edu</mat-icon>
                 </a>
                 
-                <a class="sideItem" [routerLink]="['/main','status']">
-                    <mat-icon>summarize</mat-icon>
+                <a class="sideItem" [routerLink]="['/main','Cronograma']">
+                    <mat-icon>watch</mat-icon>
                 </a>
 
                 <a class="sideItem" [routerLink]="['/main','formularios']">
                     <mat-icon>assignment</mat-icon>
+                </a>
+                <a class="sideItem" [routerLink]="['/main','formularios']">
+                    <mat-icon>settings</mat-icon>
                 </a>
 
             </div>

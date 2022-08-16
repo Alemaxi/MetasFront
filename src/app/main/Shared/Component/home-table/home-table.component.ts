@@ -1,42 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
-import { simuladorEntity } from '../../Entities/simulador-entity';
-
-export const listSimulator: simuladorEntity[] = [
-  {
-    indicador: 'nomeIndicador',
-    unidadeMedida: '%',
-    frequencia:10,
-    desafio:5,
-    minimo:3,
-    planejado:4,
-    resultado:5,
-    simulacao:4.5,
-    peso:5,
-  },
-  {
-    indicador: 'nomeIndicador',
-    unidadeMedida: '%',
-    frequencia:10,
-    desafio:5,
-    minimo:3,
-    planejado:4,
-    resultado:5,
-    simulacao:4.5,
-    peso:5,
-  },
-  {
-    indicador: 'nomeIndicador',
-    unidadeMedida: '%',
-    frequencia:10,
-    desafio:5,
-    minimo:3,
-    planejado:4,
-    resultado:5,
-    simulacao:4.5,
-    peso:5,
-  }
-]
+import { IIndicadorEntity } from '../../Entities/dashboard/indicador-entity';
 
 @Component({
   selector: 'app-home-table',
@@ -45,11 +9,12 @@ export const listSimulator: simuladorEntity[] = [
 })
 export class HomeTableComponent implements OnInit {
 
-  itemList: simuladorEntity[] = [];
+  @Input() itemList: IIndicadorEntity[] = [];
 
-  constructor() { 
-    this.itemList = listSimulator;
+  constructor() {   
   }
+
+  html: string = '<h1>oi</h1>';
 
   ngOnInit(): void {
   }
@@ -57,7 +22,7 @@ export class HomeTableComponent implements OnInit {
   GetFrequenciaTotal():number{
     let result: number = 0;
 
-    this.itemList.forEach( (x:simuladorEntity) =>{
+    this.itemList.forEach( (x:IIndicadorEntity) =>{
       result += x.frequencia;
     })
 

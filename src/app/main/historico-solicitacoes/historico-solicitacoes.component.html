@@ -1,0 +1,51 @@
+<div class="historico-header">
+    <div>
+        <h1>Historico de Alterações</h1>
+        <span>Solicitações enviadas e recebidas continuaram com o status “pendente” enquanto não concluídas pelo gestor ou representante responsável.</span>
+    </div>
+</div>
+
+<div class="historico-body">
+    <table class="historico-table">
+        <tr>
+            <th>Solicitacao</th>
+            <th>Origem</th>
+            <th>Responsável</th>
+            <th>Abertura</th>
+            <th>Conclusão</th>
+            <th>Status</th>
+            <th>Descrição</th>
+        </tr>
+        <tr *ngFor="let dado of historicoDados">
+            <td>{{dado.solicitacao}}</td>
+            <td>{{dado.origem}}</td>
+            <td>{{dado.responsavel}}</td>
+            <td>{{dado.abertura | date:"shortDate"}}</td>
+            <td>{{dado.conclusao | date:"shortDate"}}</td>
+            <td>{{dado.status}}</td>
+            <td>{{dado.descricao}}</td>
+        </tr>
+    </table>
+
+    <section class="historico-pagination">
+        <div class="left-pagination">
+            <div class="select-area">
+                <select name="" id="">
+                    <option value="10">10/página</option>
+                    <option value="10">15/página</option>
+                    <option value="10">20/página</option>
+                </select>
+                <mat-icon class="select-icon">arrow_drop_down</mat-icon>
+            </div>
+
+            <span>Exibindo de 'N' a 'M' do total de 'X'</span>
+        </div>
+        <div class="right-pagination">
+            <mat-icon>last_page</mat-icon>
+            <mat-icon>chevron_right</mat-icon>
+            <span class="page-label">1</span>
+            <mat-icon>chevron_left</mat-icon>
+            <mat-icon>first_page</mat-icon>
+        </div>
+    </section>
+</div>

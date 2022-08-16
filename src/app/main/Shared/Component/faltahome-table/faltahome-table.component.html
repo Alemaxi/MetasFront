@@ -1,0 +1,14 @@
+<table class="table">
+    <tr>
+        <th>Minhas ausências</th>
+        <th>Data inicio</th>
+        <th>Data fim</th>
+    </tr>
+
+    <tr *ngFor="let falta of faltas">
+        <td>{{falta.nomeAusencia}}</td>
+        <td>{{falta.dataInicio | date:"shortDate"}}</td>
+        <td>{{falta.dataFim | date:"shortDate"}}</td>
+    </tr>
+</table>
+

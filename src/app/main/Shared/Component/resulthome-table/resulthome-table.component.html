@@ -1,0 +1,20 @@
+<table class="table">
+    <tr>
+        <th>Título</th>
+        <th>Resultado</th>
+        <th>Período</th>
+    </tr>
+
+    <tr *ngFor="let resultado of resultados">
+        <td>{{resultado.titulo}}</td>
+        <td>{{resultado.resultado}}</td>
+        <td>{{resultado.periodo}}</td>
+    </tr>
+    
+    
+    <tr >
+        <th class="resumo">Total</th>
+        <th class="resumo">0</th>
+        <th class="resumo">0</th>
+    </tr>
+</table>

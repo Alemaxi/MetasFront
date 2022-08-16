@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TestingServiceService } from './services/testing-service.service'
+import { MatIconRegistry } from '@angular/material/icon';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,8 @@ export class AppComponent{
   title = 'MetasFront';
 
 
-  constructor(){
+  constructor(matRegistry: MatIconRegistry){
+    matRegistry.addSvgIcon('dashboard','../assets/icons/svg/dashboard.svg');
   }
 
   

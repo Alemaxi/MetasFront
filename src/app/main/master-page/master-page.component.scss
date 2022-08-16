@@ -25,6 +25,12 @@ $color4: #b2dbf5;
     .form-select {
         @extend .general-control;
     }
+
+    .notification-button{
+        padding-left: 20px;
+        color: $color2;
+        cursor: pointer;
+    }
 }
 
 .mainBody {

@@ -1,0 +1,5 @@
+@import '../../css/general/general-table.scss';
+
+.table{
+    @extend .general-table;
+}

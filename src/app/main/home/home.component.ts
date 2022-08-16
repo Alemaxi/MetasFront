@@ -1,26 +1,55 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TestingServiceService } from '../../services/testing-service.service';
+import { TreinamentoDialogComponent } from '../treinamento-dialog/treinamento-dialog.component';
+import { IIndicadorEntity } from '../Shared/Entities/dashboard/indicador-entity';
+import { IDashboardStatus } from '../Shared/Entities/dashboard/dashboard-celula-status';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
+import { MatDialog } from '@angular/material/dialog';
+
+import { TestingServiceService } from '../../services/testing-service.service';
+import { environment } from 'src/environments/environment';
+
+enum MesEnum{
+  jan, fev,mar,abr,mai,jun,jul,ago,set,out,nov,dec,res
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
+const listSimulator: IIndicadorEntity[] = [
+  {
+    indicador: 'nomeIndicador',
+    unidadeMedida: '%',
+    frequencia:10,
+    desafio:5,
+    minimo:3,
+    planejado:4,
+    resultado:5,
+    simulacao:4.5,
+    peso:5,
+  },
+  {
+    indicador: 'nomeIndicador',
+    unidadeMedida: '%',
+    frequencia:10,
+    desafio:5,
+    minimo:3,
+    planejado:4,
+    resultado:5,
+    simulacao:4.5,
+    peso:5,
+  },
+  {
+    indicador: 'nomeIndicador',
+    unidadeMedida: '%',
+    frequencia:10,
+    desafio:5,
+    minimo:3,
+    planejado:4,
+    resultado:5,
+    simulacao:4.5,
+    peso:5,
+  }
+]
+
+
 
 @Component({
   selector: 'app-home',
@@ -29,7 +58,25 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public testing: TestingServiceService){
+  itemsList: IIndicadorEntity[] = listSimulator;
+
+  selectedMes: MesEnum = MesEnum.jan;
+
+  showMes: boolean = true;
+
+  status: IDashboardStatus = {
+    dataAtualizacao: new Date(),
+    status:2
+  }
+
+  constructor(
+    public testing: TestingServiceService,
+    public dialog: MatDialog
+    ){
+      dialog.open(TreinamentoDialogComponent,
+        {
+          minWidth:600,
+        });
   }
 
   ngOnInit(): void {
@@ -44,7 +91,15 @@ export class HomeComponent implements OnInit {
   texto: string = '';
   data: Date = new Date('1994/06/30');
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  CheckMes(mes: MesEnum): boolean{
+    return this.selectedMes == mes;
+  }
+
+  ChangeMes(mes: MesEnum): void{
+    this.selectedMes = mes;
+
+    if(this.selectedMes != 12) this.showMes = true
+    else this.showMes = false
+  }
 
 }

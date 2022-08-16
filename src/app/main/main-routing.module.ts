@@ -5,34 +5,17 @@ import { MasterPageComponent } from './master-page/master-page.component';
 import { HomeComponent } from './home/home.component';
 import { MinhaCelulaComponent } from './minha-celula/minha-celula.component';
 import { OrientacoesComponent } from './orientacoes/orientacoes.component';
-import { HistoricoAlteracoesComponent } from './historico-alteracoes/historico-alteracoes.component';
-import { StatusMetasComponent } from './status-metas/status-metas.component';
+import { HistoricoSolicitacoesComponent } from './historico-solicitacoes/historico-solicitacoes.component';
 import { SimuladorComponent } from './simulador/simulador.component';
 import { PlanejamentoComponent } from './planejamento/planejamento.component';
 import { FormulariosComponent } from './formularios/formularios.component';
-import { NotificacoesComponent } from './status-metas/notificacoes/notificacoes.component';
-import { CronogramaComponent } from './status-metas/cronograma/cronograma.component';
-import { SolicitacoesComponent } from './status-metas/solicitacoes/solicitacoes.component';
-import { SobrestatusmetasComponent } from './status-metas/sobrestatusmetas/sobrestatusmetas.component';
 
-const statusRoutes: Routes =[
-  {path:'notificacoes', component: NotificacoesComponent},
-  {path:'cronograma', component: CronogramaComponent},
-  {path:'solicitacoes', component: SolicitacoesComponent},
-  {path:'sobrestatusmetas', component: SobrestatusmetasComponent},
-  {path:'',redirectTo:'notificacoes',pathMatch:'full'}
-]
 
 const mainRoutes: Routes = [
   {path:'home',component: HomeComponent},
   {path:'minhacelula',component:MinhaCelulaComponent},
   {path:'orientacoes',component:OrientacoesComponent},
-  {path:'historico',component: HistoricoAlteracoesComponent},
-  {
-    path:'status',
-    component: StatusMetasComponent,
-    children: statusRoutes  
-  },
+  {path:'historico',component: HistoricoSolicitacoesComponent},
   {path:'simulador',component: SimuladorComponent},
   {path:'planejamento',component: PlanejamentoComponent},
   {path:'formularios',component: FormulariosComponent},
