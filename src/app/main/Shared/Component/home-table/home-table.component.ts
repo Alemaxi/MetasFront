@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { IIndicadorEntity } from '../../Entities/dashboard/indicador-entity';
+import { IIndicadorEntity } from '../../Entities/Dashboard/indicador-entity';
+import { ITabelaCampos } from '../../../../../liguagens/Linguagem-modulos/home-linguagem-entities';
 
 @Component({
   selector: 'app-home-table',
@@ -10,6 +11,7 @@ import { IIndicadorEntity } from '../../Entities/dashboard/indicador-entity';
 export class HomeTableComponent implements OnInit {
 
   @Input() itemList: IIndicadorEntity[] = [];
+  @Input() tabelaLinguagem: ITabelaCampos | undefined;
 
   constructor() {   
   }

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { FaltaEntity } from '../../Entities/dashboard/falta-entity';
+import { IFaltasEntity } from '../../Entities/Dashboard/falta-entity';
+import { ITabelaFalta } from '../../../../../liguagens/Linguagem-modulos/home-linguagem-entities';
 
 @Component({
   selector: 'app-faltahome-table',
@@ -11,14 +12,9 @@ export class FaltahomeTableComponent implements OnInit {
 
   constructor() { }
 
-  @Input() faltas: FaltaEntity[] = [
-    {nomeAusencia:"ausente",dataInicio:new Date(), dataFim: new Date()},
-    {nomeAusencia:"ausente",dataInicio:new Date(), dataFim: new Date()},
-    {nomeAusencia:"ausente",dataInicio:new Date(), dataFim: new Date()},
-    {nomeAusencia:"ausente",dataInicio:new Date(), dataFim: new Date()},
-  ]
+  @Input() faltas: IFaltasEntity | undefined;
+  @Input() faltasLinguagem: ITabelaFalta | undefined;
 
   ngOnInit(): void {
   }
-
 }

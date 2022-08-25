@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { IIndicadorEntity } from '../Shared/Entities/dashboard/indicador-entity';
+import { IIndicadorEntity } from '../Shared/Entities/Dashboard/indicador-entity';
 
 const listSimulator: IIndicadorEntity[] = [
   {

@@ -1,0 +1,15 @@
+<div class="mensagem">
+    <h3><b>{{mensagem?.titulo}}</b></h3>
+    <span class="prazo">{{mensagem?.prazo | date:"shortDate"}}</span>
+    <span class="texto">
+        <div class="efeito-fim-texto"></div>
+        {{mensagem?.texto}}
+    </span>
+    <div class="acoes-mensagem">
+        <span class="date-acoes">
+            {{mensagem?.dataPostagem | date:'MM/yy'}} às
+            {{mensagem?.dataPostagem | date: 'HH:mm'}}
+        </span>
+        <a>{{mostraMaisText}}</a>
+    </div>
+</div>

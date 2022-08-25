@@ -1,4 +1,4 @@
-export interface PerfilDadosFormulario{
+export interface IPerfilDadosFormulario{
     ata:boolean;
     formMetas: string;
     npGestor: string;

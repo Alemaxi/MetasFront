@@ -1,86 +1,96 @@
 <div class="home-header">
   <div class="dashboard-panel">
-    <span class="last-update">Ultima atualização: {{status.dataAtualizacao | date:"shortDate"}}</span>
-    <h1 class="title">Dashboard da minha célula</h1>
+    <div class="title-wrapper">
 
-    <app-metas-stepper [status]="status.status" style="margin-bottom: 25px;"></app-metas-stepper>
+      <h1  name="title" id="id" class="title">{{homeLinguagem?.Title}}</h1>
+
+      <div class="actions-area" *ngIf="false">
+        <a href="" class="action-button">
+          <mat-icon>check</mat-icon>
+          <span >Avaliar resultados</span>
+        </a>
+
+        <a href="" class="action-button">
+          <mat-icon>check</mat-icon>
+          <span >Enviar para avaliação</span>
+        </a>
+
+        <a href="" class="action-button-white">
+          <mat-icon>save</mat-icon>
+          <span >salvar</span>
+        </a>
+
+        <a href="" class="action-button-white">
+          <mat-icon>print</mat-icon>
+          <span >Imprimir</span>
+        </a>
+
+      </div>
+    </div>
+    <span class="last-update">{{homeLinguagem?.subTitle}}:
+      {{status.dataAtualizacao | date:"shortDate"}}</span>
+
+    <app-metas-stepper [status]="status.status" [stepperLinguagem]="homeLinguagem?.Stepper"
+    style="margin-bottom: 25px;"></app-metas-stepper>
 
     <nav class="months-menu">
-      <div class="month-menu-item" 
-        [class.month-menu-item-active]="CheckMes(0)"
-        (click)="ChangeMes(0)">
-        <a>Janeiro</a>
+      <div class="month-menu-item" [class.month-menu-item-active]="CheckMes(0)" (click)="ChangeMes(0)">
+        {{homeLinguagem?.navegacaoMeses?.item1}}
       </div>
-      <div class="month-menu-item"
-        [class.month-menu-item-active]="CheckMes(1)"
-        (click)="ChangeMes(1)">
-        Fevereiro
+      <div class="month-menu-item" [class.month-menu-item-active]="CheckMes(1)" (click)="ChangeMes(1)">
+        {{homeLinguagem?.navegacaoMeses?.item2}}
       </div>
-      <div class="month-menu-item"
-      [class.month-menu-item-active]="CheckMes(2)"
-      (click)="ChangeMes(2)">
-        Março 
+      <div class="month-menu-item" [class.month-menu-item-active]="CheckMes(2)" (click)="ChangeMes(2)">
+        {{homeLinguagem?.navegacaoMeses?.item3}}
       </div>
-      <div class="month-menu-item"
-      [class.month-menu-item-active]="CheckMes(3)"
-      (click)="ChangeMes(3)">
-        Abril
+      <div class="month-menu-item" [class.month-menu-item-active]="CheckMes(3)" (click)="ChangeMes(3)">
+        {{homeLinguagem?.navegacaoMeses?.item4}}
       </div>
-      <div class="month-menu-item"
-        [class.month-menu-item-active]="CheckMes(4)"
-        (click)="ChangeMes(4)">
-        Maio
+      <div class="month-menu-item" [class.month-menu-item-active]="CheckMes(4)" (click)="ChangeMes(4)">
+        {{homeLinguagem?.navegacaoMeses?.item5}}
       </div>
-      <div class="month-menu-item"
-      [class.month-menu-item-active]="CheckMes(5)"
-      (click)="ChangeMes(5)">
-      Junho
+      <div class="month-menu-item" [class.month-menu-item-active]="CheckMes(5)" (click)="ChangeMes(5)">
+        {{homeLinguagem?.navegacaoMeses?.item6}}
       </div>
-      <div class="month-menu-item"
-        [class.month-menu-item-active]="CheckMes(6)"
-        (click)="ChangeMes(6)">
-        Julho
+      <div class="month-menu-item" [class.month-menu-item-active]="CheckMes(6)" (click)="ChangeMes(6)">
+        {{homeLinguagem?.navegacaoMeses?.item7}}
       </div>
-      <div class="month-menu-item"
-        [class.month-menu-item-active]="CheckMes(7)"
-        (click)="ChangeMes(7)">
-        Agosto
+      <div class="month-menu-item" [class.month-menu-item-active]="CheckMes(7)" (click)="ChangeMes(7)">
+        {{homeLinguagem?.navegacaoMeses?.item8}}
       </div>
-      <div class="month-menu-item"
-        [class.month-menu-item-active]="CheckMes(8)"
-        (click)="ChangeMes(8)">
-        Setembro
+      <div class="month-menu-item" [class.month-menu-item-active]="CheckMes(8)" (click)="ChangeMes(8)">
+        {{homeLinguagem?.navegacaoMeses?.item9}}
       </div>
-      <div class="month-menu-item"
-        [class.month-menu-item-active]="CheckMes(9)"
-        (click)="ChangeMes(9)">
-        Outubro
+      <div class="month-menu-item" [class.month-menu-item-active]="CheckMes(9)" (click)="ChangeMes(9)">
+        {{homeLinguagem?.navegacaoMeses?.item10}}
       </div>
-      <div class="month-menu-item"
-        [class.month-menu-item-active]="CheckMes(10)"
-        (click)="ChangeMes(10)">
-        Novembro
+      <div class="month-menu-item" [class.month-menu-item-active]="CheckMes(10)" (click)="ChangeMes(10)">
+        {{homeLinguagem?.navegacaoMeses?.item11}}
       </div>
-      <div class="month-menu-item"
-      [class.month-menu-item-active]="CheckMes(11)"
-      (click)="ChangeMes(11)">
-        Dezembro
+      <div class="month-menu-item" [class.month-menu-item-active]="CheckMes(11)" (click)="ChangeMes(11)">
+        {{homeLinguagem?.navegacaoMeses?.item12}}
       </div>
-      <div class="month-menu-item"
-        [class.month-menu-item-active]="CheckMes(12)"
-        (click)="ChangeMes(12)">
-        Resultado
+      <div class="month-menu-item" [class.month-menu-item-active]="CheckMes(12)" (click)="ChangeMes(12)">
+        {{homeLinguagem?.navegacaoMeses?.item13}}
       </div>
     </nav>
   </div>
 
 </div>
 
-<div class="home-body">
-  <app-home-table *ngIf="showMes" [itemList]="itemsList"></app-home-table>
+<div class="home-body" *ngIf="showMes">
 
-  <app-resulthome-table *ngIf="!showMes"></app-resulthome-table>
+  <div style="width: 100%;" *ngFor="let formulario of formularioList">
+    <div class="table-title">
+      <h2>{{formulario.titulo}} (Jan)</h2>
+    </div>
+    <app-home-table [tabelaLinguagem]="homeLinguagem?.tabela" [itemList]="formulario.indicadores"></app-home-table>
+  </div>
 
-  <app-faltahome-table *ngIf="!showMes"></app-faltahome-table>
+</div>
 
+<div class="home-body" *ngIf="!showMes">
+  <app-resulthome-table [resultadosLinguagem]="homeLinguagem?.tabelaResultado" [resultados]="resultadosList"></app-resulthome-table>
+
+  <app-faltahome-table [faltasLinguagem]="homeLinguagem?.tabelaFalta" [faltas]="faltas"></app-faltahome-table>
 </div>

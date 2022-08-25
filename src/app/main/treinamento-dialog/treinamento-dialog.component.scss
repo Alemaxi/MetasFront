@@ -1,15 +1,35 @@
 @import '../Shared/css/general/general-button.scss';
 
+$color1: #149aec;
 
 .treinamento-button{
     @extend .general-button;
     height: 40px;
-    width: 40%;
+    width: 48%;
     outline: none;
+    border: none;
 }
 
 .treinamento-button:focus{
     border: none;
+    outline: none;
+}
+
+.orientacoes-button{
+    @extend .general-button;
+    height: 40px;
+    width: 48%;
+    color: $color1;
+    border: 2px solid $color1;
+    outline: none;
+    background-color: white;
+}
+
+
+.video-box{
+    width: 100%;
+    height: 250px;
+    background-color: black;
 }
 
 
@@ -28,4 +48,5 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    margin-top: 25px;
 }

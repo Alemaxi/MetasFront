@@ -14,7 +14,7 @@ import { MasterPageComponent } from './master-page/master-page.component';
 import { MinhaCelulaComponent } from './minha-celula/minha-celula.component';
 import { HomeTableComponent } from './Shared/Component/home-table/home-table.component';
 import { OrientacoesComponent } from './orientacoes/orientacoes.component';
-import { MetasStepperComponent } from './Shared/Component/metas-stepper/metas-stepper.component';
+import { MetasStepperComponent } from './home/metas-stepper/metas-stepper.component';
 import { HistoricoSolicitacoesComponent } from './historico-solicitacoes/historico-solicitacoes.component';
 import { SimuladorComponent } from './simulador/simulador.component';
 import { PlanejamentoComponent } from './planejamento/planejamento.component';
@@ -22,6 +22,8 @@ import { FormulariosComponent } from './formularios/formularios.component';
 import { TreinamentoDialogComponent } from './treinamento-dialog/treinamento-dialog.component';
 import { ResulthomeTableComponent } from './Shared/Component/resulthome-table/resulthome-table.component';
 import { FaltahomeTableComponent } from './Shared/Component/faltahome-table/faltahome-table.component';
+import { NotificacaoMenuComponent } from './master-page/notificacao-menu/notificacao-menu.component';
+import { MensagemComponent } from './master-page/notificacao-menu/mensagem/mensagem.component';
 
 
 @NgModule({
@@ -39,6 +41,8 @@ import { FaltahomeTableComponent } from './Shared/Component/faltahome-table/falt
     TreinamentoDialogComponent,
     ResulthomeTableComponent,
     FaltahomeTableComponent,
+    NotificacaoMenuComponent,
+    MensagemComponent,
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,63 @@
+<svg style="width:100%;">
+    
+    
+    <line class="line" x1="6%" y1="50%" x2="18%" y2="50%"  [class.unavailable]="!biggerOrEqualTo(1)" />
+    <line class="line" x1="20%" y1="50%" x2="32%" y2="50%" [class.unavailable]="!biggerOrEqualTo(2)" />
+    <line class="line" x1="34%" y1="50%" x2="46%" y2="50%" [class.unavailable]="!biggerOrEqualTo(3)" />
+    <line x1="48%" y1="50%" x2="60%" y2="50%" class="line" [class.unavailable]="!biggerOrEqualTo(4)" />
+    <line class="line" x1="62%" y1="50%" x2="74%" y2="50%" [class.unavailable]="!biggerOrEqualTo(5)" />
+    <line class="line" x1="76%" y1="50%" x2="88%" y2="50%" [class.unavailable]="!biggerOrEqualTo(6)" />
+    
+    
+    <circle cx="5%" cy="50%" r="1.5%" class="circle" [class.unavailable]="!biggerOrEqualTo(0)"
+        [class.current]="status==0" />
+    <circle cx="19%" cy="50%" r="1.5%" class="circle" [class.unavailable]="!biggerOrEqualTo(1)"
+        [class.current]="status==1" />
+    <circle cx="33%" cy="50%" r="1.5%" class="circle" [class.current]="status==2"
+        [class.unavailable]="!biggerOrEqualTo(2)" />
+    <circle cx="47%" cy="50%" r="1.5%" class="circle" [class.unavailable]="!biggerOrEqualTo(3)"
+        [class.current]="status==3" />
+    <circle cx="89%" cy="50%" r="1.5%" class="circle" [class.unavailable]="!biggerOrEqualTo(6)"
+        [class.current]="status==6" />
+    <circle cx="75%" cy="50%" r="1.5%" class="circle" [class.unavailable]="!biggerOrEqualTo(5)"
+        [class.current]="status==5" />
+    <circle cx="61%" cy="50%" r="1.5%" class="circle" [class.unavailable]="!biggerOrEqualTo(4)"
+        [class.current]="status==4" />
+    
+
+    <text [class.text]="biggerOrEqualTo(0)" x="4%" y="72%" font-size="100%"
+        [class.text-unavailable]="!biggerOrEqualTo(0)">{{stepperLinguagem?.step1?.line1}}</text>
+    <text [class.text]="biggerOrEqualTo(0)" x="4%" y="82%" font-size="12px"
+        [class.text-unavailable]="!biggerOrEqualTo(0)">{{stepperLinguagem?.step1?.line2}}</text>
+
+    <text [class.text]="biggerOrEqualTo(1)" x="18%" y="72%" font-size="12px"
+        [class.text-unavailable]="!biggerOrEqualTo(1)">{{stepperLinguagem?.step2?.line1}}</text>
+    <text [class.text]="biggerOrEqualTo(1)" x="18%" y="82%" font-size="12px"
+        [class.text-unavailable]="!biggerOrEqualTo(1)">{{stepperLinguagem?.step2?.line2}}</text>
+
+    <text [class.text]="biggerOrEqualTo(2)" x="32%" y="72%" font-size="12px"
+        [class.text-unavailable]="!biggerOrEqualTo(2)">{{stepperLinguagem?.step3?.line1}}</text>
+    <text [class.text]="biggerOrEqualTo(2)" x="32%" y="82%" font-size="12px"
+        [class.text-unavailable]="!biggerOrEqualTo(2)">{{stepperLinguagem?.step3?.line2}}</text>
+
+    <text [class.text]="biggerOrEqualTo(3)" x="46%" y="72%" font-size="12px"
+        [class.text-unavailable]="!biggerOrEqualTo(3)">{{stepperLinguagem?.step4?.line1}}</text>
+    <text [class.text]="biggerOrEqualTo(3)" x="46%" y="82%" font-size="12px"
+        [class.text-unavailable]="!biggerOrEqualTo(3)">{{stepperLinguagem?.step4?.line2}}</text>
+
+    <text [class.text]="biggerOrEqualTo(4)" x="60%" y="72%" font-size="12px"
+        [class.text-unavailable]="!biggerOrEqualTo(4)">{{stepperLinguagem?.step5?.line1}}</text>
+    <text [class.text]="biggerOrEqualTo(4)" x="60%" y="82%" font-size="12px"
+        [class.text-unavailable]="!biggerOrEqualTo(4)">{{stepperLinguagem?.step5?.line2}}</text>
+
+    <text x="74%" y="72%" font-size="12px" [class.text]="biggerOrEqualTo(6)"
+        [class.text-unavailable]="!biggerOrEqualTo(5)">{{stepperLinguagem?.step6?.line1}}</text>
+    <text x="74%" y="82%" font-size="12px" [class.text]="biggerOrEqualTo(6)"
+        [class.text-unavailable]="!biggerOrEqualTo(5)">{{stepperLinguagem?.step6?.line2}}</text>
+
+    <text x="88%" y="72%" font-size="12px" [class.text]="biggerOrEqualTo(6)"
+        [class.text-unavailable]="!biggerOrEqualTo(6)">{{stepperLinguagem?.step7?.line1}}</text>
+    <text x="88%" y="82%" font-size="12px" [class.text]="biggerOrEqualTo(6)"
+        [class.text-unavailable]="!biggerOrEqualTo(6)">{{stepperLinguagem?.step7?.line2}}</text>
+    
+</svg>

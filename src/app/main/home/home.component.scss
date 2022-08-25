@@ -1,5 +1,6 @@
 @import '../Shared/css/general/general-header.scss';
 @import '../Shared/css/general/general-body.scss';
+@import '../Shared/css/general/general-button.scss';
 
 .home-header{
     @extend .general-header;
@@ -13,10 +14,37 @@
     width: 100%;
     background-color: none;
 
-    .title {
-        font-size: 25pt;
-        padding-bottom: 10px;
+    .title-wrapper{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        .title {
+            font-size: 30px;
+        }
+
+        .actions-area{
+            display: flex;
+
+            .action-button{
+                @extend .general-button;
+                margin-left: 10px;
+
+                span{
+                    margin-left: 8px;
+                }
+            }
+
+            .action-button-white{
+                @extend .action-button;
+                background-color: rgba($color: #000000, $alpha: 0);
+                color: $color1;
+                border: 1px solid $color1;
+            }
+        }
+
     }
+
 
     .stepper-area {
         width: 100%;
@@ -55,6 +83,7 @@
 
 .home-body{
     @extend .general-body;
+    margin-bottom: 15px;
 }
 
 .homeTable {

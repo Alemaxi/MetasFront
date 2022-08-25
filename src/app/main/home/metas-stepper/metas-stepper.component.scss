@@ -5,6 +5,7 @@ $color2: #d3d3d3;
     fill: $color1;
     stroke:$color1;
     stroke-width: 2px;
+    z-index: 1;
 }
 
 .current{
@@ -16,6 +17,7 @@ $color2: #d3d3d3;
 .line{
     stroke: $color1;
     stroke-width: 2px;
+    z-index: 0;
 }
 
 .unavailable{
@@ -23,10 +25,16 @@ $color2: #d3d3d3;
     stroke: $color2;
 }
 
+.general-text{
+    font-size: 11px;
+}
+
 .text-unavailable{
+    @extend .general-text;
     fill: $color2;
 }
 
 .text {
+    @extend .general-text;
     fill: $color1;
 }

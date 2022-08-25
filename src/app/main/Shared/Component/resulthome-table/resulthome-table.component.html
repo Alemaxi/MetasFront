@@ -1,20 +1,31 @@
+<table class="table no-margin" *ngFor="let resultado of resultados">
+
+        <tr>
+            <th class="first-column">{{resultado.titulo}}</th>
+            <th class="other-columns">{{resultadosLinguagem?.column2}}</th>
+            <th class="other-columns">{{resultadosLinguagem?.column3}}</th>
+        </tr>
+
+        <tr>
+            <td>{{resultadosLinguagem?.row2}}</td>
+            <td>{{resultado.semestre1.resultado}}</td>
+            <td>{{resultado.semestre1.periodo}}</td>
+        </tr>
+        <tr>
+            <td>{{resultadosLinguagem?.row3}}</td>
+            <td>{{resultado.semestre2.resultado}}</td>
+            <td>{{resultado.semestre2.periodo}}</td>
+        </tr>
+        <tr>
+            <td class="total">{{resultadosLinguagem?.row4}}</td>
+            <td class="total">{{resultado.semestre1.resultado + resultado.semestre2.resultado}}</td>
+            <td></td>
+        </tr>
+</table>
 <table class="table">
     <tr>
-        <th>Título</th>
-        <th>Resultado</th>
-        <th>Período</th>
-    </tr>
-
-    <tr *ngFor="let resultado of resultados">
-        <td>{{resultado.titulo}}</td>
-        <td>{{resultado.resultado}}</td>
-        <td>{{resultado.periodo}}</td>
-    </tr>
-    
-    
-    <tr >
-        <th class="resumo">Total</th>
-        <th class="resumo">0</th>
-        <th class="resumo">0</th>
+        <th class="resumo first-column" >Total proporcional</th>
+        <th class="resumo other-columns" style="width:20%;">{{GetTotalProporcional()}}</th>
+        <td ></td>
     </tr>
 </table>

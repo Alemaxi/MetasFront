@@ -1,0 +1,20 @@
+import { Component, Input, OnInit } from '@angular/core';
+
+import { INotificacaoEntity } from '../../../Shared/Entities/Master-Page/notificacao-entity';
+
+@Component({
+  selector: 'app-mensagem',
+  templateUrl: './mensagem.component.html',
+  styleUrls: ['./mensagem.component.scss']
+})
+export class MensagemComponent implements OnInit {
+
+  @Input() mensagem: INotificacaoEntity | undefined;
+  @Input() mostraMaisText: string | undefined;
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}

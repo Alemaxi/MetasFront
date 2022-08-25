@@ -1,0 +1,25 @@
+{
+  "locale": "pt-br",
+  "translations": {
+    "homeTable-ColumnIndicador": "Indicador",
+    "homeTable-ColumnUnidadeMedida": "Un. de Medida",
+    "homeTable-ColumnFrequencia": "Frequencia",
+    "homeTable-ColumnPeso": "Peso",
+    "homeTable-ColumnMinimo": "Mínimo",
+    "homeTable-ColumnPlanejado": "Planejado",
+    "homeTable-ColumnDesafio": "Desafio",
+    "homeTable-ColumnResultado": "Resultado",
+    "homeTable-ColumnSimulacao": "Simulação (SAL)",
+    "homeTable-RowResumo": "Total",
+    "minhaCelula-title": "Dashboard da minha célula",
+    "minhaCelula-buttonAvaliarResultados": "Avaliar resultados",
+    "minhaCelula-buttonEnviarParaAvaliacao": "Enviar para avaliação",
+    "minhaCelula-buttonSalvar": "salvar",
+    "minhaCelula-buttonImprimir": "Imprimir",
+    "minhaCelula-spanUltimaAtualizacao": "Ultima atualização: {$INTERPOLATION}",
+    "notificacoes-title": "Notificações",
+    "notificacoes-ultimasSolicitacoes": "Últimas solicitações",
+    "notificacoes-buttonLimparTudo": "Limpar tudo",
+    "notificacoes-buttonMostrarMais": "Mostrar mais"
+  }
+}
