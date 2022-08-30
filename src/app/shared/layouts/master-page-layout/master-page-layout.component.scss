@@ -1,0 +1,137 @@
+@import '../../../main/Shared/css/general/general-inputs.scss';
+@import '../../../main//Shared/css/general/general-side-menu.scss';
+
+$color1: #0578BE;
+$color2: white;
+$color3: #0069AC;
+$color4: #b2dbf5;
+
+.toggle{
+    display: none;
+}
+
+.logoImg {
+    height: 50px;
+}
+
+.matToolbar {
+    display: flex;
+    background-color: $color1;
+    color: $color2;
+    
+    
+    .endToolbar {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
+.form-select {
+    @extend .general-control;
+}
+
+.notificacao{
+    display: block;
+}
+
+.mainBody {
+    display: flex;
+    width: 100%;
+    height: 92.6%;
+    overflow: hidden;
+}
+
+.router {
+    width: 100%;
+    overflow: auto;
+}
+
+.sidenav-container {
+    height: 92.7%;
+    width: 100%;
+
+    .sidenav {
+        width: 280px;
+        height: 100%;
+
+        .sidenav-top{
+            width: 100%;
+            height: 70%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidenav-bottom{
+            width: 100%;
+            height: 30%;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .sidenav-item {
+            padding-left: 12px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            font-family: source sans pro;
+            width: 100%;
+            height: 55px;
+            color: $color3;
+            cursor: pointer;
+
+            .sidenav-icon {
+                margin-right: 12px;
+            }
+        }
+
+        .sidenav-item:focus{
+            outline: none;
+        }
+        .sidenav-item:hover {
+            background-color: $color4;
+        }
+
+        .sidenav-item-close {
+            @extend .sidenav-item;
+            
+            font-size: 32px;
+        }
+    }
+
+    .sidenav-content {
+        display: flex;
+    }
+}
+
+.topIcons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    height: 70%;
+}
+
+.bottomIcons {
+    position: initial;
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    align-items: center;
+    height: 30%;
+}
+
+.notification-button{
+    padding-left: 10px;
+    margin-left: 15px;
+    margin-right: 10px;
+    color: $color2;
+    cursor: pointer;
+
+    mat-icon{
+        fill: $color2;
+    }
+}

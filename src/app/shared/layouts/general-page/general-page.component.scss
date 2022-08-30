@@ -1,0 +1,33 @@
+@import '../../../main/Shared/css/general/general-header.scss';
+@import '../../../main/Shared/css/general/general-body.scss';
+
+
+.general-page-header{
+    @extend .general-header;
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    padding-bottom: 0px;    
+}
+
+.general-page-body{
+    @extend .general-body;
+
+}
+
+.title-wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .title {
+        font-size: 30px;
+    }
+
+    .actions-area{
+        display: flex;
+    }
+
+}

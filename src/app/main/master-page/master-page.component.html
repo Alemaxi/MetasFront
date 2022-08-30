@@ -15,7 +15,6 @@
             (click)="ChangeState()">
             <mat-icon svgIcon="notificacoes"></mat-icon>
         </a>
-
     </div>
 </mat-toolbar>
 
@@ -170,8 +169,9 @@
                 </a>
             </div>
         </div>
-        <div class="router">
+        <div class="router" [@MainRouter]="Transicao()">
             <router-outlet></router-outlet>
+            <a style="cursor: pointer;" (click)="MudarLingua()">Mudar lingua</a>
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>

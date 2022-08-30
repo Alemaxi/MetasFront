@@ -83,7 +83,7 @@ export const appLinguagemPT:IAppEstruturaLinguagem = {
             tutorial: {
                 button1:"Ler orientações",
                 button2:"Fechar",
-                title:"Seja bem vindo ao programa de metas",
+                title:"Seja bem vindo ao programa de metas!",
                 subtitle:"Confira um breve tutorial do nosso sistema."
             },
             ItemMenu1:"Menu",

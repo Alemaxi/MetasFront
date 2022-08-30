@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject, Subscription } from 'rxjs'
 import { environment } from 'src/environments/environment';
@@ -8,11 +8,12 @@ import { Testing } from '../../Entities/Testing.interface'
 @Injectable({
   providedIn: 'root'
 })
-export class TestingServiceService {
+export class TestingServiceService{
 
   endpoint: string = "Testing"
 
-  constructor(protected http: HttpClient) { }
+  constructor(protected http: HttpClient) { 
+  }
 
   GetValues(): Subject<string[]> | undefined {
 
@@ -28,5 +29,6 @@ export class TestingServiceService {
 
 
     return returner;
+
   }
 }

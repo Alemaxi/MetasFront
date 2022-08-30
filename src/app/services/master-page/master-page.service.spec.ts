@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { IMasterPageService } from './master-page.service';
+import { MasterPageService } from './master-page.service';
 
-describe('IMasterPageService', () => {
-  let service: IMasterPageService;
+describe('MasterPageService', () => {
+  let service: MasterPageService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(IMasterPageService);
+    service = TestBed.inject(MasterPageService);
   });
 
   it('should be created', () => {

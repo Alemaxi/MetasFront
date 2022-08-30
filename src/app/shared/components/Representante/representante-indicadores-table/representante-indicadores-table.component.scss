@@ -1,0 +1,5 @@
+@import '../../../css/general/general-table.scss';
+
+.representante-indicadores-table{
+    @extend .general-table;
+}

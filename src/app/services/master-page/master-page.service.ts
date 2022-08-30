@@ -10,7 +10,7 @@ import { CicloEntity } from '../../main/Shared/Entities/Master-Page/ciclo-entity
 @Injectable({
   providedIn: 'root'
 })
-export class IMasterPageService extends GenericService{
+export class MasterPageService extends GenericService{
 
   constructor(
     protected http:HttpClient,

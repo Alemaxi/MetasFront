@@ -12,9 +12,15 @@ export class MensagemComponent implements OnInit {
   @Input() mensagem: INotificacaoEntity | undefined;
   @Input() mostraMaisText: string | undefined;
 
+  mostrarMais: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  MostrarMaisMudarEstado():void {
+    this.mostrarMais = !this.mostrarMais;
   }
 
 }

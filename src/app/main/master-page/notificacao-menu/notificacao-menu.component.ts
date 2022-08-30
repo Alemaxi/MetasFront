@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { DateAdapter } from '@angular/material/core'
 
 import { INotificacaoEntity } from '../../Shared/Entities/Master-Page/notificacao-entity'
-import { IMasterPageService } from '../../../services/master-page/master-page.service';
+import { MasterPageService } from '../../../services/master-page/master-page.service';
 import { TestingServiceService } from '../../../services/testing-service.service';
 import { INotificacoes } from '../../../../liguagens/Linguagem-modulos/master-page-linguagem-entities';
 
@@ -28,7 +28,7 @@ export class NotificacaoMenuComponent implements OnInit {
   mensagens: INotificacaoEntity[] = []
 
   constructor(
-    protected notificacoes: IMasterPageService,
+    protected notificacoes: MasterPageService,
     protected testing: TestingServiceService ) { }
 
   ngOnInit(): void {

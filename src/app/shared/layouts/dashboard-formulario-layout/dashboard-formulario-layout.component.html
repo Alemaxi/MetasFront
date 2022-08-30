@@ -1,0 +1,27 @@
+<app-general-page>
+    <h1 class="title" title-area>{{dashboardLinguagem?.Title}} </h1>
+
+        <div class="actions-area" actions-area>
+            <ng-content select="[actions-area]"></ng-content>
+        </div>
+
+    
+    
+    <span header-area>{{dashboardLinguagem?.subTitle}}: 
+        {{status.dataAtualizacao | date:"short" }} </span>
+    
+    <app-metas-stepper [status]="status.status" header-area 
+    [stepperLinguagem]="dashboardLinguagem?.Stepper"
+    style="margin-bottom: 25px;"></app-metas-stepper>
+
+    <app-navegacao-meses [navegacaoMesesLinguagem]="dashboardLinguagem?.navegacaoMeses"
+        (mesNavegado)="MesNavegado($event)"
+        header-area></app-navegacao-meses>
+
+    <div body>
+
+        <ng-content select="[body]"></ng-content>
+
+    </div>
+
+</app-general-page>

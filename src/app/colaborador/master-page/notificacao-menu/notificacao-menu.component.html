@@ -1,0 +1,20 @@
+<div 
+class="notificacoes-menu"
+[class.menu-closed]="open"
+*ngIf="true">
+    <div class="notificacao-header">
+        <h2 i18n="@@notificacoes-title">{{notificacoesLinguagem?.title}}</h2>
+        <a class="" (click)="ChangeState()"> <mat-icon>close</mat-icon></a>
+    </div>
+
+    <div class="notificacao-subHeader">
+        <h3>{{notificacoesLinguagem?.subtitle}}</h3>
+        <a (click)="LimparNotificacoes()">{{notificacoesLinguagem?.limparButton}}</a>
+    </div>
+
+    <hr>
+
+    <app-mensagem *ngFor="let mensagem of mensagens" 
+    [mostraMaisText]="notificacoesLinguagem?.MostrarMaisButton"
+    [mensagem]="mensagem"></app-mensagem>
+</div>

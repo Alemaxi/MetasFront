@@ -1,27 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-
-import { TreinamentoDialogComponent } from '../treinamento-dialog/treinamento-dialog.component';
-import { IIndicadorEntity } from '../Shared/Entities/Dashboard/indicador-entity';
-import { IDashboardStatus } from '../Shared/Entities/Dashboard/dashboard-celula-status';
-import { HomeService } from '../../services/Home/home.service';
-import { AppStateService } from '../../services/app-state/app-state.service';
-import { IHome } from '../../../liguagens/Linguagem-modulos/home-linguagem-entities';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 import { MatDialog } from '@angular/material/dialog';
-import { IResultadoEntity } from '../Shared/Entities/Dashboard/resultado-entity';
-import { IFormularioEntity } from '../Shared/Entities/Dashboard/formulario-entity';
-import { IFaltasEntity } from '../Shared/Entities/Dashboard/falta-entity';
 
+import { IIndicadorEntity } from '../../shared/Entities/Dashboard/indicador-entity';
+import { IDashboardStatus } from '../../shared/Entities/Dashboard/dashboard-celula-status';
+import { DashboardService } from '../../services/Dashboard/dashboard.service';
+import { AppStateService } from '../../services/app-state/app-state.service';
+import { IHome } from '../../../liguagens/Linguagem-modulos/home-linguagem-entities';
+import { IResultadoEntity } from '../../shared/Entities/Dashboard/resultado-entity';
+import { IFormularioEntity } from '../../shared/Entities/Dashboard/formulario-entity';
+import { IFaltasEntity } from '../../shared/Entities/Dashboard/falta-entity';
+import { MesEnum } from '../../shared/Enum/MesEnum';
 
-enum MesEnum{
-  jan, fev,mar,abr,mai,jun,jul,ago,set,out,nov,dec,res
-}
 
 const listSimulator: IIndicadorEntity[] = [
   {
     indicador: 'nomeIndicador',
     unidadeMedida: '%',
-    frequencia:10,
+    frequencia:'trimestral',
     desafio:5,
     minimo:3,
     planejado:4,
@@ -38,7 +34,7 @@ const listSimulator: IIndicadorEntity[] = [
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit,AfterViewInit {
 
   selectedMes: MesEnum = MesEnum.jan;
   showMes: boolean = true;
@@ -56,14 +52,10 @@ export class HomeComponent implements OnInit {
 
 
   constructor(
-    public home: HomeService,
+    public home: DashboardService,
     public dialog: MatDialog,
     public appState: AppStateService
     ){
-      dialog.open(TreinamentoDialogComponent,
-        {
-          minWidth:700,
-        });
   }
 
   ngOnInit(): void {
@@ -76,9 +68,17 @@ export class HomeComponent implements OnInit {
     this.home.GetFormularios().subscribe(x => {
       this.formularioList = x;
     });
-
-    this.homeLinguagem = this.appState.GetAppLinguagem().main.home;
+    
+    this.appState.GetAppLinguagem().subscribe(x=> {
+      this.homeLinguagem = x.main.home;
+    })
+    
   }
+
+  ngAfterViewInit(): void {
+  }
+
+  
 
   numero: number = 0;
   texto: string = '';

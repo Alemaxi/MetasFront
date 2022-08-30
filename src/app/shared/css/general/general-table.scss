@@ -1,0 +1,32 @@
+$color1: #EFEFEF;
+$color2: white;
+$color3:#C1C1C1;
+
+.general-table{
+    width: 100%;
+    background-color: $color2;
+    margin-bottom: 30px;
+
+
+    tr,td,th {
+        height: 35px;
+        font-family: work sans;
+        width: auto;
+    }
+    
+    .resumo{
+        background-color: $color3;
+    }
+
+    th{
+        background-color: #9fcfec;
+        border: 1px solid $color2;
+        font-family: work sans;
+        font-weight: 1;
+    }
+
+    td, th{
+        padding: 5px;
+    }
+
+}

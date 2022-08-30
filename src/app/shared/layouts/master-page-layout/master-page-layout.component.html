@@ -1,0 +1,93 @@
+<mat-toolbar class="matToolbar">
+    <div>
+        <div class="logo" logo>
+            <a [routerLink]="['/main']">
+                <img src="../../../assets/img/Programa Metas_branco.png" class="logoImg" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="endToolbar">
+        <select  class="form-select" name="" id="" (click)="CicloSelecionado($event)">
+            <option *ngFor="let ciclo of ciclo?.ciclos" value=1>
+                {{masterPageLinguagem?.dropdownText}} {{ciclo}}</option>
+        </select>
+        
+        <a class="notification-button" matBadge="*" matBadgeColor="warn" endToolbar
+            *ngIf="showNotificationButton" (click)="ChangeState()">
+            <mat-icon svgIcon="notificacoes"></mat-icon>
+        </a>
+        
+        <ng-content select="[endToolbar]"></ng-content>
+    </div>
+</mat-toolbar>
+
+
+<app-notificacao-menu [notificacoesLinguagem]="masterPageLinguagem?.notificacoes" 
+(close)="ChangeState()" [open]="open" class="notificacao"></app-notificacao-menu>
+
+<mat-sidenav-container class="sidenav-container" [hasBackdrop]="true">
+    <mat-sidenav #drawer class="sidenav" opened="false" mode="over">
+
+        <div class="sidenav-top">
+            <a class="sidenav-item-close" (click)="drawer.toggle()">
+                <mat-icon class="sidenav-icon">close</mat-icon>
+                <span>Menu</span>
+            </a>
+
+            <ng-content select="[sidenav-top]"></ng-content>
+        </div>
+
+        <div class="sidenav-bottom">
+            <a class="sidenav-item" (click)="drawer.toggle()">
+                <mat-icon class="sidenav-icon" svgIcon="help_desk"></mat-icon>
+                <span>{{masterPageLinguagem?.ItemMenu10}}</span>
+            </a>
+            <a class="sidenav-item" [routerLink]="['/main','orientacoes']">
+                <mat-icon class="sidenav-icon" svgIcon="orientacoes"></mat-icon>
+                <span>{{masterPageLinguagem?.ItemMenu11}}</span>
+            </a>
+            <a class="sidenav-item" href="../../../assets/pdf/manualGestão.pdf" target="_blank">
+                <mat-icon class="sidenav-icon" svgIcon="cultura_gerdau"></mat-icon>
+                <span>{{masterPageLinguagem?.ItemMenu12}}</span>
+            </a>
+        </div>
+
+
+    </mat-sidenav>
+
+    <mat-sidenav-content class="sidenav-content">
+
+        <div class="sideMenu">
+
+            <div class="topIcons">
+
+
+                <a (click)="drawer.toggle()" class="sideItem">
+                    <mat-icon svgIcon="menu"></mat-icon>
+                </a>
+
+                <ng-content select="[icons-top]" (click)="tst()"></ng-content>
+            </div>
+
+            <div class="bottomIcons">
+                <a class="sideItem">
+                    <mat-icon svgIcon="help_desk"></mat-icon>
+                </a>
+            
+                <a class="sideItem" [routerLink]="['/main','orientacoes']" icons-bottom>
+                    <mat-icon svgIcon="orientacoes"></mat-icon>
+                </a>
+            
+                <a class="sideItem" href="../../../assets/pdf/manualGestão.pdf" target="_blank" icons-bottom>
+                    <mat-icon svgIcon="cultura_gerdau"></mat-icon>
+                </a>
+            </div>
+        </div>
+        <div class="router">
+
+            <ng-content select="[router]"></ng-content>
+        
+        </div>
+        <a class="toggle" id="toggle" (click)="drawer.toggle()"></a>
+    </mat-sidenav-content>
+</mat-sidenav-container>

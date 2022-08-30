@@ -1,6 +1,6 @@
 <div class="title" mat-dialog-title>
-    <h2>Seja bem vindo ao programa de metas</h2>
-    <h4>Confira um breve tutorial do nosso sistema.</h4>
+    <h2>{{TutorialLingua?.title}}</h2>
+    <h4>{{TutorialLingua?.subtitle}}</h4>
 </div>
 <mat-dialog-content>
     <div class="video-box">
@@ -12,7 +12,7 @@
         [mat-dialog-close]="" 
         [routerLink]="['main','orientacoes']" 
         class="orientacoes-button">
-        Ler orientações
+        {{TutorialLingua?.button1}}
     </button>
-    <button [mat-dialog-close]="'ok'" class="treinamento-button">Fechar</button>
+    <button [mat-dialog-close]="'ok'" class="treinamento-button">{{TutorialLingua?.button2}}</button>
 </mat-dialog-actions>

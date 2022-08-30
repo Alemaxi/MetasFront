@@ -1,0 +1,20 @@
+<app-master-page-layout>
+
+    <a class="sideItem" [routerLink]="['dashboard']" icons-top>
+        <mat-icon svgIcon="dashboard"></mat-icon>
+    </a>
+
+    <a class="sideItem" [routerLink]="['dashboard']" icons-top>
+        <mat-icon svgIcon="formulario_metas"></mat-icon>
+    </a>
+
+    <a class="sideItem" [routerLink]="['/main','planejamento']" icons-top>
+        <mat-icon svgIcon="cronograma_metas"></mat-icon>
+    </a>
+
+    <a class="sideItem" [routerLink]="['/main','historico']" icons-top>
+        <mat-icon svgIcon="archive"></mat-icon>
+    </a>
+
+    <router-outlet router></router-outlet>
+</app-master-page-layout>

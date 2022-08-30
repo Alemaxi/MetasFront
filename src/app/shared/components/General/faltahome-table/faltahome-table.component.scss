@@ -1,0 +1,13 @@
+@import '../../../../main/Shared/css/general/general-table.scss';
+
+.table{
+    @extend .general-table;
+
+    .first-column{
+        width: 60%;
+    }
+
+    .other-columns{
+        width: 20%;
+    }
+}

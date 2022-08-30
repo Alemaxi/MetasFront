@@ -1,0 +1,14 @@
+.general-control {
+    height: 40px;
+    padding-left: 15px;
+    padding-right: 95px;
+    width: auto;
+    font-size: 18px;
+    font-family: Work Sans;
+    border-radius: 5px;
+    border: 1px solid rgb(179, 177, 177);
+}
+
+.general-control:focus{
+    outline: 1px solid rgb(130, 191, 241);
+}

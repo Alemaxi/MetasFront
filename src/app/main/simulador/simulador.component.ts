@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-import { IIndicadorEntity } from '../Shared/Entities/Dashboard/indicador-entity';
+import { IIndicadorEntity } from '../../shared/Entities/Dashboard/indicador-entity';
 
 const listSimulator: IIndicadorEntity[] = [
   {
     indicador: 'nomeIndicador',
     unidadeMedida: '%',
-    frequencia:10,
+    frequencia:'trimestral',
     desafio:5,
     minimo:3,
     planejado:4,
@@ -17,7 +17,7 @@ const listSimulator: IIndicadorEntity[] = [
   {
     indicador: 'nomeIndicador',
     unidadeMedida: '%',
-    frequencia:10,
+    frequencia:'trimestral',
     desafio:5,
     minimo:3,
     planejado:4,
@@ -28,7 +28,7 @@ const listSimulator: IIndicadorEntity[] = [
   {
     indicador: 'nomeIndicador',
     unidadeMedida: '%',
-    frequencia:10,
+    frequencia:'trimestral',
     desafio:5,
     minimo:3,
     planejado:4,

@@ -12,8 +12,8 @@ import { FormulariosComponent } from './formularios/formularios.component';
 
 
 const mainRoutes: Routes = [
-  {path:'home',component: HomeComponent},
-  {path:'minhacelula',component:MinhaCelulaComponent},
+  {path:'home',component: HomeComponent, data:{hje:"hje"}},
+  {path:'minhacelula',component:MinhaCelulaComponent, data:{hje:"hje2"}},
   {path:'orientacoes',component:OrientacoesComponent},
   {path:'historico',component: HistoricoSolicitacoesComponent},
   {path:'simulador',component: SimuladorComponent},

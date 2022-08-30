@@ -83,6 +83,7 @@
   <div style="width: 100%;" *ngFor="let formulario of formularioList">
     <div class="table-title">
       <h2>{{formulario.titulo}} (Jan)</h2>
+      <span>{{formulario.status}}</span>
     </div>
     <app-home-table [tabelaLinguagem]="homeLinguagem?.tabela" [itemList]="formulario.indicadores"></app-home-table>
   </div>
