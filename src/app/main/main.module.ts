@@ -19,13 +19,12 @@ import { SimuladorComponent } from './simulador/simulador.component';
 import { PlanejamentoComponent } from './planejamento/planejamento.component';
 import { FormulariosComponent } from './formularios/formularios.component';
 import { TreinamentoDialogComponent } from './treinamento-dialog/treinamento-dialog.component';
-import { NotificacaoMenuComponent } from './master-page/notificacao-menu/notificacao-menu.component';
-import { MensagemComponent } from './master-page/notificacao-menu/mensagem/mensagem.component';
 
 
 import { LayoutsModule } from '../shared/layouts/layouts.module';
 import { ColaboradorComponentsModule } from '../shared/components/colaborador/colaborador-cpnts.module';
 import { GeneralCpntsModule } from '../shared/components/General/general-cpnts.module';
+import { MasterPageCpntsModule } from '../shared/components/master-page/master-page-cpnts.module';
 
 @NgModule({
   declarations: [
@@ -38,8 +37,6 @@ import { GeneralCpntsModule } from '../shared/components/General/general-cpnts.m
     PlanejamentoComponent,
     FormulariosComponent,
     TreinamentoDialogComponent,
-    NotificacaoMenuComponent,
-    MensagemComponent,
   ],
   imports: [
     CommonModule,
@@ -52,7 +49,8 @@ import { GeneralCpntsModule } from '../shared/components/General/general-cpnts.m
     MatBadgeModule,
     ColaboradorComponentsModule,
     GeneralCpntsModule,
-    LayoutsModule
+    LayoutsModule,
+    MasterPageCpntsModule,  
   ]
 })
 export class MainModule { }

@@ -23,7 +23,6 @@ import { GeneralCpntsModule } from '../components/General/general-cpnts.module';
   ],
   exports:[
     MasterPageLayoutComponent,
-    GeneralPageComponent,
     DashboardFormularioLayoutComponent,
     MasterPageCpntsModule,
   ],

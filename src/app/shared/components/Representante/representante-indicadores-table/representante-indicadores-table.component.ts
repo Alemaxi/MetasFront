@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { DashboardService } from '../../../../services/Dashboard/dashboard.service';
 import { IRepresentanteIndicadorEntity } from '../../../Entities/Dashboard/representante-indicador-entity';
 import { ITabelaCampos } from '../../../../../liguagens/Linguagem-modulos/home-linguagem-entities';
+import { edicaoTabelaEnum } from '../../../Enum/edicao-tabela-enum';
 
 import { MatCheckboxChange } from '@angular/material/checkbox';
 
@@ -15,6 +16,8 @@ export class RepresentanteIndicadoresTableComponent implements OnInit {
 
   @Input() itemList: IRepresentanteIndicadorEntity[] = [];
   @Input() tabelaLinguagem: ITabelaCampos | undefined;
+  @Input() showSelect: boolean = true;
+  @Input() edicao: edicaoTabelaEnum = 1;
 
 
   constructor(

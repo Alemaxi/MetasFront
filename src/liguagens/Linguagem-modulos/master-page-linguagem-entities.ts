@@ -3,18 +3,17 @@ export interface IMasterPage {
     tutorial: ITutorial;
 
     dropdownText: string;
-    ItemMenu1: string;
-    ItemMenu2: string;
-    ItemMenu3:string;
-    ItemMenu4:string;
-    ItemMenu5:string;
-    ItemMenu6:string;
-    ItemMenu7:string;
-    ItemMenu8:string;
-    ItemMenu9:string;
-    ItemMenu10:string;
-    ItemMenu11:string;
-    ItemMenu12:string;
+    menuLabel: string;
+    DashboardLabel: string;
+    formularioMetas:string;
+    simuladorLabel:string;
+    planejamentoLabel:string;
+    historicoLabel:string;
+    cronogramaLabel:string;
+    configuracoesLabel:string;
+    culturaLabel:string;
+    orientacoesLabel:string;
+    HelpLabel:string;
 }
 
 export interface INotificacoes {

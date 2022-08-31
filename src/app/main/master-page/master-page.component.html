@@ -28,14 +28,14 @@
         <div class="sidenav-top">
             <a class="sidenav-item-close" (click)="drawer.toggle()">
                 <mat-icon class="sidenav-icon">close</mat-icon>
-                <span>{{masterPageLinguagem?.ItemMenu1}}</span>
+                <span>{{masterPageLinguagem?.menuLabel}}</span>
             </a>
             <a class="sidenav-item" 
                 [routerLink]="['/main']" 
                 (click)="drawer.toggle()"
             >
                 <mat-icon class="sidenav-icon" svgIcon="dashboard"></mat-icon>
-                <span>{{masterPageLinguagem?.ItemMenu2}}</span>
+                <span>{{masterPageLinguagem?.DashboardLabel}}</span>
             </a>
 
             <a class="sidenav-item" 
@@ -43,7 +43,7 @@
                 (click)="drawer.toggle()"
             >
                 <mat-icon class="sidenav-icon" svgIcon="formulario_metas"></mat-icon>
-                <span>{{masterPageLinguagem?.ItemMenu3}}</span>
+                <span>{{masterPageLinguagem?.formularioMetas}}</span>
             </a>
 
             <a class="sidenav-item" 
@@ -51,7 +51,7 @@
                 (click)="drawer.toggle()"
             >
                 <mat-icon class="sidenav-icon" svgIcon="dashboard"></mat-icon>
-                <span>{{masterPageLinguagem?.ItemMenu4}}</span>
+                <span>{{masterPageLinguagem?.simuladorLabel}}</span>
             </a>
             
             <a class="sidenav-item" 
@@ -59,7 +59,7 @@
                 (click)="drawer.toggle()"
             >
                 <mat-icon class="sidenav-icon" svgIcon="cronograma_metas"></mat-icon>
-                <span>{{masterPageLinguagem?.ItemMenu5}}</span>
+                <span>{{masterPageLinguagem?.planejamentoLabel}}</span>
             </a>
             
             <a class="sidenav-item" 
@@ -67,7 +67,7 @@
                 (click)="drawer.toggle()"
             >
                 <mat-icon class="sidenav-icon" svgIcon="archive"></mat-icon>
-                <span>{{masterPageLinguagem?.ItemMenu6}}</span>
+                <span>{{masterPageLinguagem?.historicoLabel}}</span>
             </a>
 
             <a class="sidenav-item" 
@@ -75,7 +75,7 @@
                 (click)="drawer.toggle()"
             >
                 <mat-icon class="sidenav-icon" svgIcon="cronograma_metas"></mat-icon>
-                <span>{{masterPageLinguagem?.ItemMenu7}}</span>
+                <span>{{masterPageLinguagem?.cronogramaLabel}}</span>
             </a>
 
             <a class="sidenav-item" 
@@ -83,7 +83,7 @@
                 (click)="drawer.toggle()"
             >
                 <mat-icon class="sidenav-icon" svgIcon="formulario_metas"></mat-icon>
-                <span>{{masterPageLinguagem?.ItemMenu8}}</span>
+                <span>{{masterPageLinguagem?.formularioMetas}}</span>
             </a>
 
             <a class="sidenav-item" 
@@ -91,22 +91,22 @@
                 (click)="drawer.toggle()"
             >
                 <mat-icon class="sidenav-icon" svgIcon="configuracao"></mat-icon>
-                <span>{{masterPageLinguagem?.ItemMenu9}}</span>
+                <span>{{masterPageLinguagem?.configuracoesLabel}}</span>
             </a>
         </div>
 
         <div class="sidenav-bottom">
             <a class="sidenav-item" (click)="drawer.toggle()">
                 <mat-icon class="sidenav-icon" svgIcon="help_desk"></mat-icon>
-                <span>{{masterPageLinguagem?.ItemMenu10}}</span>
+                <span>{{masterPageLinguagem?.culturaLabel}}</span>
             </a>
             <a class="sidenav-item" [routerLink]="['/main','orientacoes']">
                 <mat-icon class="sidenav-icon" svgIcon="orientacoes"></mat-icon>
-                <span>{{masterPageLinguagem?.ItemMenu11}}</span>
+                <span>{{masterPageLinguagem?.orientacoesLabel}}</span>
             </a>
             <a class="sidenav-item" href="../../../assets/pdf/manualGestão.pdf" target="_blank">
                 <mat-icon class="sidenav-icon" svgIcon="cultura_gerdau"></mat-icon>
-                <span>{{masterPageLinguagem?.ItemMenu12}}</span>
+                <span>{{masterPageLinguagem?.HelpLabel}}</span>
             </a>
         </div>
 

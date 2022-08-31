@@ -1,5 +1,31 @@
 @import '../../../css/general/general-table.scss';
 
+$editable-field-color: rgb(95, 95, 95);
+
 .representante-indicadores-table{
     @extend .general-table;
+
+    .editable-field{
+        border: none;
+        padding-left: 10px;
+        width: 100%;
+        height: auto;
+        border: 1px solid $editable-field-color;
+        border-radius: 5px;
+        cursor: text;
+    }
+
+    .editable-field:focus{
+        border: 1px solid $editable-field-color;
+        border-radius: 5px;
+    }
+
+    .indicadorColumn{
+        width: 25%;
+    }
+
+    .numericColumn{
+        width: 7%;
+    }
 }
+

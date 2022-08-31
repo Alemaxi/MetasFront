@@ -9,7 +9,7 @@ import { RepresentanteRoutingModule } from './representante-routing.module';
 import { LayoutsModule } from '../shared/layouts/layouts.module';
 import { MasterPageComponent } from './master-page/master-page.component';
 import { RepresentanteCpntsModule } from '../shared/components/Representante/representante-cpnts.module';
-
+import { GeneralCpntsModule } from '../shared/components/General/general-cpnts.module';
 
 
 @NgModule({
@@ -24,6 +24,7 @@ import { RepresentanteCpntsModule } from '../shared/components/Representante/rep
     RouterModule,
     MatIconModule,
     RepresentanteCpntsModule,
+    GeneralCpntsModule
   ]
 })
 export class RepresentanteModule { }

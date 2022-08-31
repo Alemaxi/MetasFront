@@ -9,6 +9,7 @@ import { MasterPageService } from '../../services/master-page/master-page.servic
 import { IMasterPage } from '../../../liguagens/Linguagem-modulos/master-page-linguagem-entities';
 import { CicloEntity } from '../../main/Shared/Entities/Master-Page/ciclo-entity';
 import { TreinamentoDialogComponent } from '../../main/treinamento-dialog/treinamento-dialog.component';
+import { GenericMasterPage } from '../../shared/components/Generics/generic-master-page';
 
 @Component({
   selector: 'app-master-page',
@@ -29,17 +30,16 @@ import { TreinamentoDialogComponent } from '../../main/treinamento-dialog/treina
     ])
   ]
 })
-export class MasterPageComponent implements OnInit {
+export class MasterPageComponent extends GenericMasterPage implements OnInit {
 
   constructor(
     protected appState: AppStateService,
     protected masterPage: MasterPageService,
     protected dialog: MatDialog,
     protected contexts: ChildrenOutletContexts
-  ) { }
+  ) { super(); }
 
 
-  masterPageLinguagem: IMasterPage | undefined;
   ciclo: CicloEntity | undefined;
   open: boolean = true;
   transicaoState: string = 'state1';
@@ -68,19 +68,7 @@ export class MasterPageComponent implements OnInit {
     this.Transicao();
   }
 
-  ChangeState(): void {
-    this.open = !this.open;
-  }
 
-  LimparNotificacoes(): void {
-
-  }
-
-  CicloSelecionado(x: Event): void {
-    let htmlElement = x.target as HTMLSelectElement;
-
-    this.appState.SetCiclo(Number.parseInt(htmlElement.value));
-  }
 
   Transicao(): string {
     let auxActual: string | undefined = this.contexts.getContext('primary')?.route?.snapshot.component?.name;
@@ -94,10 +82,6 @@ export class MasterPageComponent implements OnInit {
     }
 
     return this.transicaoState;
-  }
-
-  ToggleSidenav():void {
-    document.getElementById('toggle')?.click();
   }
 
 }

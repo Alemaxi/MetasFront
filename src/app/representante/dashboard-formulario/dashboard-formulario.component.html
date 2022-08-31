@@ -17,7 +17,12 @@
     </a>
 
 
-    <app-representante-indicadores-table [tabelaLinguagem]="indicadoresLinguagem" body></app-representante-indicadores-table>
+    <app-representante-indicadores-table [tabelaLinguagem]="dashboardLinguagem?.tabela" body></app-representante-indicadores-table>
 
+    <div class="home-body" *ngIf="!showMes" >
+        <app-resulthome-table [resultadosLinguagem]="dashboardLinguagem?.tabelaResultado" [resultados]="resultadosList"></app-resulthome-table>
+      
+        <app-faltahome-table [faltasLinguagem]="dashboardLinguagem?.tabelaFalta" [faltas]="faltas"></app-faltahome-table>
+      </div>
 
 </app-dashboard-formulario-layout>

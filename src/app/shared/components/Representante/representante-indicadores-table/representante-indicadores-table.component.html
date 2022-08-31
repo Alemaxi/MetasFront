@@ -1,42 +1,129 @@
 <table class="representante-indicadores-table">
     <tr>
-        <th *ngIf="true" style="width: 1%;">
+        <th *ngIf="showSelect && edicao==1" style="width: 1%;">
             <mat-checkbox [color]="'primary'" (change)="Change($event)"></mat-checkbox>
         </th>
-        <th>{{tabelaLinguagem?.column1}}</th>
+        <th class="indicadorColumn">{{tabelaLinguagem?.column1}}</th>
         <th>{{tabelaLinguagem?.column2}}</th>
         <th>{{tabelaLinguagem?.column3}}</th>
-        <th>{{tabelaLinguagem?.column4}}</th>
-        <th>{{tabelaLinguagem?.column5}}</th>
-        <th>{{tabelaLinguagem?.column6}}</th>
-        <th>{{tabelaLinguagem?.column7}}</th>
-        <th>{{tabelaLinguagem?.column8}}</th>
-        <th>{{tabelaLinguagem?.column9}}</th>
-    </tr>
-
-    
-
-    <tr *ngFor="let item of itemList">
-        <td><mat-checkbox 
-            (change)="ChangeRow(item)"
-            [checked]="item.selected" 
-            [color]="'primary'">
-        </mat-checkbox></td>
-        <td>{{item.indicador}}</td>
-        <td>{{item.unidadeMedida}}</td>
-        <td>{{item.frequencia}}</td>
-        <td>{{item.peso}}</td>
-        <td>{{item.minimo}}</td>
-        <td>{{item.planejado}}</td>
-        <td>{{item.desafio}}</td>
-        <td>{{item.resultado}}</td>
-        <td>{{item.simulacao}}</td>
+        <th class="numericColumn">{{tabelaLinguagem?.column4}}</th>
+        <th class="numericColumn">{{tabelaLinguagem?.column5}}</th>
+        <th class="numericColumn">{{tabelaLinguagem?.column6}}</th>
+        <th class="numericColumn">{{tabelaLinguagem?.column7}}</th>
+        <th class="numericColumn">{{tabelaLinguagem?.column8}}</th>
+        <th class="numericColumn">{{tabelaLinguagem?.column9}}</th>
     </tr>
     
-    
-    <tr >
-        <th class="resumo" *ngIf="true"></th>
-        <th class="resumo">{{tabelaLinguagem?.resumoCelula}}</th>
+
+    <tbody *ngIf="edicao==0">
+        <tr *ngFor="let item of itemList">
+
+            <td class="indicadorColumn">{{item.indicador}}</td>
+
+            <td>{{item.unidadeMedida}}</td>
+
+            <td>{{item.frequencia}}
+            </td>
+
+            <td>{{item.peso}}
+            </td>
+
+            <td>{{item.minimo}}
+            </td>
+
+            <td>{{item.planejado}}
+            </td>
+
+            <td>{{item.desafio}}
+            </td>
+
+            <td>{{item.resultado}}
+            </td>
+
+            <td>{{item.simulacao}}
+            </td>
+        </tr>
+
+    </tbody>
+
+
+    <tbody *ngIf="edicao==1">
+
+        <tr *ngFor="let item of itemList">
+            <td *ngIf="showSelect">
+                <mat-checkbox (change)="ChangeRow(item)" [checked]="item.selected" [color]="'primary'">
+                </mat-checkbox>
+            </td>
+
+            <td class="indicadorColumn">{{item.indicador}}</td>
+
+            <td>{{item.unidadeMedida}}</td>
+
+            <td>{{item.frequencia}}
+            </td>
+
+            <td><input class="editable-field" type="text" [value]="item.peso">
+            </td>
+
+            <td><input class="editable-field" type="text" [value]="item.minimo">
+            </td>
+
+            <td><input class="editable-field" type="text" [value]="item.planejado">
+            </td>
+
+            <td><input class="editable-field" type="text" [value]="item.desafio">
+            </td>
+
+            <td>{{item.resultado}}
+            </td>
+
+            <td>{{item.simulacao}}
+            </td>
+        </tr>
+    </tbody>
+
+
+    <tbody *ngIf="edicao==2">
+        <tr *ngFor="let item of itemList">
+
+            <td class="indicadorColumn">{{item.indicador}}</td>
+
+            <td>{{item.unidadeMedida}}</td>
+
+            <td>{{item.frequencia}}
+            </td>
+
+            <td class="numericColumn">
+                <input class="editable-field" type="text" [value]="item.peso">
+            </td>
+
+            <td class="numericColumn">
+                <input class="editable-field" type="text" [value]="item.minimo">
+            </td>
+
+            <td class="numericColumn">
+                <input class="editable-field" type="text" [value]="item.planejado">
+            </td>
+
+            <td class="numericColumn">
+                <input class="editable-field" type="text" [value]="item.desafio">
+            </td>
+
+            <td class="numericColumn">
+                <input class="editable-field" type="text" [value]="item.resultado">
+            </td>
+
+            <td class="numericColumn">
+                <input class="editable-field" type="text" [value]="item.simulacao">
+            </td>
+        </tr>
+    </tbody>
+
+
+
+    <tr>
+        <th class="resumo" *ngIf="showSelect && edicao==1"></th>
+        <th class="resumo indicadorColumn">{{tabelaLinguagem?.resumoCelula}}</th>
         <th class="resumo"></th>
         <th class="resumo"></th>
         <th class="resumo">{{GetFrequenciaTotal()}}</th>

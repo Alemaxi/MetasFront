@@ -13,16 +13,12 @@ import { ColaboradorRouterModule } from './colaborador-router.module';
 import { GeneralCpntsModule } from '../shared/components/General/general-cpnts.module';
 
 import { MasterPageComponent } from './master-page/master-page.component';
-import { NotificacaoMenuComponent } from './master-page/notificacao-menu/notificacao-menu.component';
-import { MensagemComponent } from './master-page/notificacao-menu/mensagem/mensagem.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DashboardFormularioComponent } from './dashboard-formulario/dashboard-formulario.component';
 
 @NgModule({
   declarations: [
     MasterPageComponent,
-    NotificacaoMenuComponent,
-    MensagemComponent,
     DashboardFormularioComponent,
   ],
   imports: [

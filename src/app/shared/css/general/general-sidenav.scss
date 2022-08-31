@@ -1,0 +1,28 @@
+.sidenav-item {
+    padding-left: 12px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-family: source sans pro;
+    width: 100%;
+    height: 55px;
+    color: $color3;
+    cursor: pointer;
+
+    .sidenav-icon {
+        margin-right: 12px;
+    }
+}
+
+.sidenav-item:focus{
+    outline: none;
+}
+.sidenav-item:hover {
+    background-color: $color4;
+}
+
+.sidenav-item-close {
+    @extend .sidenav-item;
+    
+    font-size: 32px;
+}

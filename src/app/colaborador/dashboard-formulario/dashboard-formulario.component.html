@@ -7,17 +7,17 @@
               <span>Status: {{formulario.status}}</span>
             </div>
             <app-home-table 
-            [tabelaLinguagem]="homeLinguagem?.tabela" 
+            [tabelaLinguagem]="dashboardLinguagem?.tabela" 
             [itemList]="formulario.indicadores"></app-home-table>
           </div>
     </div>
 
     <div body *ngIf="!showMes">
-        <app-resulthome-table [resultadosLinguagem]="homeLinguagem?.tabelaResultado">
+        <app-resulthome-table [resultadosLinguagem]="dashboardLinguagem?.tabelaResultado">
 
         </app-resulthome-table>
 
-        <app-faltahome-table [faltasLinguagem]="homeLinguagem?.tabelaFalta" [faltas]="faltas">
+        <app-faltahome-table [faltasLinguagem]="dashboardLinguagem?.tabelaFalta" [faltas]="faltas">
             
         </app-faltahome-table>
     </div>
