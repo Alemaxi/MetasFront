@@ -8,7 +8,7 @@ import { AppStateService } from '../../services/app-state/app-state.service';
 import { MasterPageService } from '../../services/master-page/master-page.service';
 import { IMasterPage } from '../../../liguagens/Linguagem-modulos/master-page-linguagem-entities';
 import { CicloEntity } from '../Shared/Entities/Master-Page/ciclo-entity';
-import { TreinamentoDialogComponent } from '../treinamento-dialog/treinamento-dialog.component';
+import { TreinamentoDialogComponent } from '../../shared/components/master-page/treinamento-dialog/treinamento-dialog.component';
 
 @Component({
   selector: 'app-master-page',

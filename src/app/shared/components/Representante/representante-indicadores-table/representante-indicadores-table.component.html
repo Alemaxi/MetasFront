@@ -1,7 +1,7 @@
 <table class="representante-indicadores-table">
     <tr>
         <th *ngIf="showSelect && edicao==1" style="width: 1%;">
-            <mat-checkbox [color]="'primary'" (change)="Change($event)"></mat-checkbox>
+            <mat-checkbox [color]="'primary'" (change)="ChangeMainCheck($event)" [checked]="AllChecked()" ></mat-checkbox>
         </th>
         <th class="indicadorColumn">{{tabelaLinguagem?.column1}}</th>
         <th>{{tabelaLinguagem?.column2}}</th>
@@ -16,7 +16,7 @@
     
 
     <tbody *ngIf="edicao==0">
-        <tr *ngFor="let item of itemList">
+        <tr *ngFor="let item of formState.indicadores">
 
             <td class="indicadorColumn">{{item.indicador}}</td>
 
@@ -49,9 +49,11 @@
 
     <tbody *ngIf="edicao==1">
 
-        <tr *ngFor="let item of itemList">
+        <tr *ngFor="let item of GetIndicadoresRegistrados()">
             <td *ngIf="showSelect">
-                <mat-checkbox (change)="ChangeRow(item)" [checked]="item.selected" [color]="'primary'">
+                <mat-checkbox 
+                (change)="ChangeRow($event,item)" 
+                [checked]="item.selected" [color]="'primary'">
                 </mat-checkbox>
             </td>
 
@@ -62,16 +64,31 @@
             <td>{{item.frequencia}}
             </td>
 
-            <td><input class="editable-field" type="text" [value]="item.peso">
+            <td><input 
+                (change)="MudancaNoRegistro()"
+                class="editable-field" 
+                type="number" 
+                [value]="item?.peso?item.peso:''">
             </td>
 
-            <td><input class="editable-field" type="text" [value]="item.minimo">
+            <td><input 
+                (change)="MudancaNoRegistro()"
+                class="editable-field" 
+                type="number" 
+                [value]="item.minimo?item.minimo:''">
             </td>
 
-            <td><input class="editable-field" type="text" [value]="item.planejado">
+            <td><input class="editable-field"
+                (change)="MudancaNoRegistro()"
+                type="number" 
+                [value]="item.planejado?item.planejado:''">
             </td>
 
-            <td><input class="editable-field" type="text" [value]="item.desafio">
+            <td><input 
+                (change)="MudancaNoRegistro()"
+                class="editable-field" 
+                type="number" 
+                [value]="item?.desafio?item.desafio:''">
             </td>
 
             <td>{{item.resultado}}
@@ -82,9 +99,83 @@
         </tr>
     </tbody>
 
+    <tbody *ngIf="edicao==1">
+        <tr *ngFor="let item of GetNovosIndicadores()">
+
+            <td *ngIf="showSelect">
+                <mat-checkbox (change)="ChangeRow($event,item)" [checked]="item.selected" [color]="'primary'">
+                </mat-checkbox>
+            </td>
+
+            <td class="indicadorColumn">
+                <input 
+                (change)="MudancaNoRegistro()"
+                class="editable-field" 
+                type="text" 
+                [value]="item.indicador?item.indicador:''">
+            </td>
+
+            <td>
+                <select class="editable-field" name="" id="" (change)="MudancaNoRegistro()">
+                    <option value="1">%</option>
+                    <option value="1">Quilograma</option>
+                    <option value="1">Litro</option>
+                </select>
+            </td>
+
+            <td >
+                <select class="editable-field" name="" id="" (change)="MudancaNoRegistro()">
+                    <option value="1">Mensal</option>
+                    <option value="1">Trimestral</option>
+                    <option value="1">Semestral</option>
+                </select>
+            </td>
+
+            <td class="numericColumn">
+                <input 
+                (change)="MudancaNoRegistro()"
+                class="editable-field"  
+                type="number" 
+                [value]="item.peso">
+            </td>
+
+            <td class="numericColumn">
+                <input 
+                (change)="MudancaNoRegistro()"
+                class="editable-field"  
+                type="number" 
+                [value]="item.minimo">
+            </td>
+
+            <td class="numericColumn">
+                <input 
+                (change)="MudancaNoRegistro()"
+                class="editable-field"  
+                type="number" 
+                [value]="item.planejado">
+            </td>
+
+            <td class="numericColumn">
+                <input 
+                (change)="MudancaNoRegistro()"
+                class="editable-field"  
+                type="number" 
+                [value]="item.desafio">
+            </td>
+
+            <td class="numericColumn">
+                {{item.resultado}}
+            </td>
+
+            <td class="numericColumn">
+                {{item.simulacao}}
+            </td>
+        </tr>
+    </tbody>
+
 
     <tbody *ngIf="edicao==2">
-        <tr *ngFor="let item of itemList">
+        <tr *ngFor="let item of formState.indicadores">
 
             <td class="indicadorColumn">{{item.indicador}}</td>
 
@@ -94,31 +185,43 @@
             </td>
 
             <td class="numericColumn">
-                <input class="editable-field" type="text" [value]="item.peso">
+                <input 
+                class="editable-field" 
+                type="number" [value]="item.peso">
             </td>
 
             <td class="numericColumn">
-                <input class="editable-field" type="text" [value]="item.minimo">
+                <input 
+                class="editable-field" type="number" 
+                [value]="item.minimo">
             </td>
 
             <td class="numericColumn">
-                <input class="editable-field" type="text" [value]="item.planejado">
+                <input 
+                class="editable-field" 
+                type="number" 
+                [value]="item.planejado">
             </td>
 
             <td class="numericColumn">
-                <input class="editable-field" type="text" [value]="item.desafio">
+                <input
+                (change)="MudancaNoRegistro()"
+                class="editable-field" 
+                type="number" 
+                [value]="item.desafio">
             </td>
 
             <td class="numericColumn">
-                <input class="editable-field" type="text" [value]="item.resultado">
+                {{item.resultado}}
             </td>
 
             <td class="numericColumn">
-                <input class="editable-field" type="text" [value]="item.simulacao">
+                {{item.simulacao}}
             </td>
         </tr>
     </tbody>
 
+    
 
 
     <tr>

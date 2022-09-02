@@ -2,7 +2,7 @@ import { IHome } from '../../../../liguagens/Linguagem-modulos/home-linguagem-en
 import { IResultadoEntity } from '../../Entities/Dashboard/resultado-entity';
 import { IFormularioEntity } from '../../Entities/Dashboard/formulario-entity';
 import { IFaltasEntity } from '../../Entities/Dashboard/falta-entity';
-import { IIndicadorEntity } from '../../Entities/Dashboard/indicador-entity';
+import { IndicadorEntity } from '../../Entities/Dashboard/indicador-entity';
 import { MesEnum } from '../../Enum/MesEnum';
 import { DashboardService } from '../../../services/Dashboard/dashboard.service';
 import { AppStateService } from '../../../services/app-state/app-state.service';
@@ -15,7 +15,7 @@ export class GenericDashboard {
     public resultadosList: IResultadoEntity[] = [];
     public formularioList: IFormularioEntity[] = [];
     public faltas: IFaltasEntity | undefined;
-    public itemsList: IIndicadorEntity[] = [];
+    public itemsList: IndicadorEntity[] = [];
 
     constructor(
         protected DashboardGeneric: DashboardService,
@@ -51,9 +51,9 @@ export class GenericDashboard {
             this.formularioList = x;
         });
 
-        this.appStateGeneric.GetAppLinguagem().subscribe( x => {
+        this.appStateGeneric.GetAppLinguagem().subscribe(x => {
             this.dashboardLinguagem = x.main.home;
-          });
-        
+        });
+
     }
 }

@@ -4,14 +4,14 @@ import { Subject, of } from 'rxjs';
 
 import { GenericService } from '../Generic-service';
 import { IFaltasEntity } from '../../shared/Entities/Dashboard/falta-entity';
-import { IIndicadorEntity } from '../../shared/Entities/Dashboard/indicador-entity';
+import { IndicadorEntity } from '../../shared/Entities/Dashboard/indicador-entity';
 import { IDashboardStatus } from '../../shared/Entities/Dashboard/dashboard-celula-status';
 import { IResultadoEntity } from '../../shared/Entities/Dashboard/resultado-entity';
 import { IFormularioEntity } from '../../shared/Entities/Dashboard/formulario-entity';
 import { IFormularioReq } from '../../shared/Entities/Dashboard/formulario-req';
-import { IRepresentanteIndicadorEntity } from '../../shared/Entities/Dashboard/representante-indicador-entity';
+import { RepresentanteIndicadorEntity } from '../../shared/Entities/Dashboard/representante/representante-indicador-entity';
 
-const listSimulator: IIndicadorEntity[] = [
+const listSimulator: IndicadorEntity[] = [
   {
     indicador: 'nomeIndicador',
     unidadeMedida: '%',
@@ -47,43 +47,12 @@ const listSimulator: IIndicadorEntity[] = [
   }
 ];
 
-const listIndicadorRepresentante: IRepresentanteIndicadorEntity[] = [
-  {
-    selected: false,
-    indicador: 'nomeIndicador',
-    unidadeMedida: '%',
-    frequencia: 'trimestral',
-    desafio: 5,
-    minimo: 3,
-    planejado: 4,
-    resultado: 5,
-    simulacao: 4.5,
-    peso: 5,
-  },
-  {
-    selected: false,
-    indicador: 'nomeIndicador',
-    unidadeMedida: '%',
-    frequencia: 'trimestral',
-    desafio: 5,
-    minimo: 3,
-    planejado: 4,
-    resultado: 5,
-    simulacao: 4.5,
-    peso: 5,
-  },
-  {
-    selected: false,
-    indicador: 'nomeIndicador',
-    unidadeMedida: '%',
-    frequencia: 'trimestral',
-    desafio: 5,
-    minimo: 3,
-    planejado: 4,
-    resultado: 5,
-    simulacao: 4.5,
-    peso: 5,
-  }
+
+
+const listIndicadorRepresentante: RepresentanteIndicadorEntity[] = [
+  new RepresentanteIndicadorEntity(),
+  new RepresentanteIndicadorEntity(),
+  new RepresentanteIndicadorEntity(),
 ];
 
 const mockResultados: IResultadoEntity[] = [
@@ -131,8 +100,8 @@ export class DashboardService extends GenericService {
     super();
   }
 
-  public GetIndicadoresDataForMonth(mes: number): Subject<IIndicadorEntity[]> {
-    let resultado = new Subject<IIndicadorEntity[]>();
+  public GetIndicadoresDataForMonth(mes: number): Subject<IndicadorEntity[]> {
+    let resultado = new Subject<IndicadorEntity[]>();
     return resultado;
   }
 
@@ -171,8 +140,8 @@ export class DashboardService extends GenericService {
     return resultado;
   }
 
-  public GetFormulariosRepresentante(): Subject<IRepresentanteIndicadorEntity[]> {
-    let resultado = new Subject<IRepresentanteIndicadorEntity[]>();
+  public GetFormulariosRepresentante(): Subject<RepresentanteIndicadorEntity[]> {
+    let resultado = new Subject<RepresentanteIndicadorEntity[]>();
 
     setTimeout(() => {
       resultado.next(listIndicadorRepresentante);

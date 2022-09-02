@@ -1,13 +1,7 @@
-<app-dashboard-formulario-layout #formularioLayout 
-  [dashboardLinguagem]="dashboardLinguagem" 
-  (mesNavegado)="MesNavegado($event)">
-    
+<app-dashboard-formulario-layout [dashboardLinguagem]="dashboardLinguagem" 
+    (mesNavegado)="MesNavegado($event)">
     <div body *ngIf="showMes" style="width: 100%;">
         <div style="width: 100%;" *ngFor="let formulario of formularioList">
-            <div class="table-title">
-              <h2>{{formulario.titulo}} (Jan)</h2>
-              <span>Status: {{formulario.status}}</span>
-            </div>
             <app-home-table 
             [tabelaLinguagem]="dashboardLinguagem?.tabela" 
             [itemList]="formulario.indicadores"></app-home-table>
@@ -18,9 +12,7 @@
         <app-resulthome-table [resultadosLinguagem]="dashboardLinguagem?.tabelaResultado">
 
         </app-resulthome-table>
-
-        <app-faltahome-table [faltasLinguagem]="dashboardLinguagem?.tabelaFalta" [faltas]="faltas">
-            
-        </app-faltahome-table>
     </div>
+
+
 </app-dashboard-formulario-layout>

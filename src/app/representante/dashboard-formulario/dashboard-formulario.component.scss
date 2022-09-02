@@ -1,1 +1,11 @@
 @import '../../shared/css/dashboard/action-button.scss';
+@import '../../shared/css/dashboard/action-button.scss';
+
+.form-actions-area{
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 5px;
+    width: 100%;
+    background-color: white;
+    margin-bottom: 25px ;
+}

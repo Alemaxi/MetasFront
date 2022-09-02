@@ -2,13 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ChildrenOutletContexts } from '@angular/router';
 import { trigger, style, state, animate, transition } from '@angular/animations';
 
-import { MatDialog } from '@angular/material/dialog';
 
 import { AppStateService } from '../../services/app-state/app-state.service';
 import { MasterPageService } from '../../services/master-page/master-page.service';
 import { IMasterPage } from '../../../liguagens/Linguagem-modulos/master-page-linguagem-entities';
 import { CicloEntity } from '../../main/Shared/Entities/Master-Page/ciclo-entity';
-import { TreinamentoDialogComponent } from '../../main/treinamento-dialog/treinamento-dialog.component';
 import { GenericMasterPage } from '../../shared/components/Generics/generic-master-page';
 
 @Component({
@@ -35,9 +33,8 @@ export class MasterPageComponent extends GenericMasterPage implements OnInit {
   constructor(
     protected appState: AppStateService,
     protected masterPage: MasterPageService,
-    protected dialog: MatDialog,
     protected contexts: ChildrenOutletContexts
-  ) { super(); }
+  ) { super(appState); }
 
 
   ciclo: CicloEntity | undefined;
@@ -47,18 +44,11 @@ export class MasterPageComponent extends GenericMasterPage implements OnInit {
 
   ngOnInit(): void {
 
-    this.appState.GetAppLinguagem().subscribe(x => {
-      this.masterPageLinguagem = x.main.masterpage;
-    })
+    this.RunInOnInit();
+
     this.masterPage.GetCiclos().subscribe(x => {
       this.ciclo = x;
     })
-
-    this.dialog.open(TreinamentoDialogComponent,
-      {
-        minWidth: 700,
-        data: this.appState.GetAppLinguagem(),
-      });
   }
 
   MudarLingua(): void {

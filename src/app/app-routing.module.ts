@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
+  {path: '', redirectTo:'login',pathMatch:'full'},
   {
     path:"colaborador",
     loadChildren: () => import('./colaborador/colaborador.module')
@@ -15,12 +16,16 @@ const routes: Routes = [
       .then(m => m.RepresentanteModule),
   },
   {
+    path:"gestor",
+    loadChildren: () => import('./gestor/gestor.module').then(m=>m.GestorModule),
+  },
+  {
     path: "login", 
     component: LoginComponent,
     data: {teste:"teste"}
   },
   {path: "main", loadChildren: () => import('./main/main.module').then(m => m.MainModule)},
-  {path: '', redirectTo:'login',pathMatch:'full'}
+  {path: "**", redirectTo:'login',pathMatch:'full'}
 ];
 
 @NgModule({

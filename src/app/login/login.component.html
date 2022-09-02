@@ -1,12 +1,23 @@
 <div class="formContainer">
-    <form class="loginContainer">
-        <label class="label">Usuario</label>
-        <input type="text" class="textField" />
 
+    <h1>Olá, Seja bem vindo!</h1>
 
-        <label class="label">Senha</label>
-        <input type="password" class="textField" />
-        <button type="submit" class="btnLogin" [routerLink]="['/main']">Iniciar Sessão</button>
-    </form>
-    <a [routerLink]="['/main']">Main</a>
+    <section style="max-width: 700px; text-align: center; font-family: work sans;">
+        Esta aplicação está em construção, então muitas coisas estão constantemente
+        mudando aqui. Selecione alguma das opções abaixo para ter uma pré vizualização
+        de como os módulos estão ficando. Atualmente estamos trabalhando no módulo de
+        representante.
+    </section>
+
+    <div style="display: flex; justify-content: space-around; width: 700px; margin-top:50px">
+        <button [routerLink]="['/colaborador']"
+            style="padding: 60px; color: white; border: 1px solid gray; background: rgb(23, 82, 192); font-family: work sans;">Colaborador</button>
+        <button [routerLink]="['/gestor']"
+            style="padding: 60px;color: white; border: 1px solid gray; background:rgb(23, 82, 192); font-family: work sans;">
+            Gestor</button>
+        <button [routerLink]="['/representante']"
+            style="padding: 60px;color: white; border: 1px solid gray; background:rgb(23, 82, 192); font-family: work sans;">
+            Representante</button>
+    </div>
+
 </div>

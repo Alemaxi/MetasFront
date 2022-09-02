@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { IIndicadorEntity } from '../../../Entities/Dashboard/indicador-entity';
+import { IndicadorEntity } from '../../../Entities/Dashboard/indicador-entity';
 import { ITabelaCampos } from '../../../../../liguagens/Linguagem-modulos/home-linguagem-entities';
 
 @Component({
@@ -10,7 +10,7 @@ import { ITabelaCampos } from '../../../../../liguagens/Linguagem-modulos/home-l
 })
 export class HomeTableComponent implements OnInit {
 
-  @Input() itemList: IIndicadorEntity[] = [];
+  @Input() itemList: IndicadorEntity[] = [];
   @Input() tabelaLinguagem: ITabelaCampos | undefined;
 
   constructor() {   
@@ -24,8 +24,8 @@ export class HomeTableComponent implements OnInit {
   GetFrequenciaTotal():number{
     let result: number = 0;
 
-    this.itemList.forEach( (x:IIndicadorEntity) =>{
-      result += x.peso;
+    this.itemList.forEach( (x:IndicadorEntity) =>{
+      result += x.peso as number;
     })
 
     return result;

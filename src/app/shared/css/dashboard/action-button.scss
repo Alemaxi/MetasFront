@@ -1,5 +1,9 @@
 @import '../general/general-button.scss';
 
+
+$buttonRedActivated:#B84232;
+$buttonRedDeactivated: #E5BAB4;
+
 .action-button{
     @extend .general-button;
     margin-left: 10px;
@@ -14,4 +18,11 @@
     background-color: rgba($color: #000000, $alpha: 0);
     color: $color1;
     border: 1px solid $color1;
+}
+
+.action-button-red{
+    @extend .action-button;
+    background-color: $buttonRedActivated;
+    color: $color2;
+    border: none;
 }

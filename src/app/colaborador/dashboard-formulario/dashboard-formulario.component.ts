@@ -21,12 +21,6 @@ export class DashboardFormularioComponent extends GenericDashboard implements On
 
   ngOnInit(): void {
 
-    this.dashboard.GetFormularios().subscribe(x => {
-      this.formularioList = x;
-    });
-
-    this.appState.GetAppLinguagem().subscribe(x=> {
-      this.dashboardLinguagem = x.main.home;
-    })
+    this.runInOnInit();
   }
 }

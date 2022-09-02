@@ -18,7 +18,6 @@ import { HistoricoSolicitacoesComponent } from './historico-solicitacoes/histori
 import { SimuladorComponent } from './simulador/simulador.component';
 import { PlanejamentoComponent } from './planejamento/planejamento.component';
 import { FormulariosComponent } from './formularios/formularios.component';
-import { TreinamentoDialogComponent } from './treinamento-dialog/treinamento-dialog.component';
 
 
 import { LayoutsModule } from '../shared/layouts/layouts.module';
@@ -36,7 +35,6 @@ import { MasterPageCpntsModule } from '../shared/components/master-page/master-p
     SimuladorComponent,
     PlanejamentoComponent,
     FormulariosComponent,
-    TreinamentoDialogComponent,
   ],
   imports: [
     CommonModule,

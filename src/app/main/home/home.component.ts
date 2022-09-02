@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 import { MatDialog } from '@angular/material/dialog';
 
-import { IIndicadorEntity } from '../../shared/Entities/Dashboard/indicador-entity';
+import { IndicadorEntity } from '../../shared/Entities/Dashboard/indicador-entity';
 import { IDashboardStatus } from '../../shared/Entities/Dashboard/dashboard-celula-status';
 import { DashboardService } from '../../services/Dashboard/dashboard.service';
 import { AppStateService } from '../../services/app-state/app-state.service';
@@ -13,7 +13,7 @@ import { IFaltasEntity } from '../../shared/Entities/Dashboard/falta-entity';
 import { MesEnum } from '../../shared/Enum/MesEnum';
 
 
-const listSimulator: IIndicadorEntity[] = [
+const listSimulator: IndicadorEntity[] = [
   {
     indicador: 'nomeIndicador',
     unidadeMedida: '%',
@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit,AfterViewInit {
   
   
   homeLinguagem: IHome | undefined;
-  itemsList: IIndicadorEntity[] = [];
+  itemsList: IndicadorEntity[] = [];
   resultadosList: IResultadoEntity[] = [];
   formularioList: IFormularioEntity[] = [];
   faltas: IFaltasEntity | undefined;

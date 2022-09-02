@@ -4,8 +4,8 @@ import { Subject } from 'rxjs';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-import { ITutorial } from '../../../liguagens/Linguagem-modulos/master-page-linguagem-entities';
-import { IAppEstruturaLinguagem } from '../../../liguagens/Linguagem-entities';
+import { ITutorial } from '../../../../../liguagens/Linguagem-modulos/master-page-linguagem-entities';
+import { IAppEstruturaLinguagem } from '../../../../../liguagens/Linguagem-entities';
 
 @Component({
   selector: 'app-treinamento-dialog',

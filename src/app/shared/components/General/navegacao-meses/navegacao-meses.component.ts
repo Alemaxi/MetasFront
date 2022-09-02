@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AppStateService } from '../../../../services/app-state/app-state.service';
 import { INavegacaoMeses } from '../../../../../liguagens/Linguagem-modulos/home-linguagem-entities'
 import { DashboardService } from '../../../../services/Dashboard/dashboard.service';
-import { IIndicadorEntity } from '../../../../main/Shared/Entities/Dashboard/indicador-entity';
+import { IndicadorEntity } from '../../../../main/Shared/Entities/Dashboard/indicador-entity';
 import { IResultadoEntity } from '../../../../main/Shared/Entities/Dashboard/resultado-entity';
 import { IFaltasEntity } from '../../../../main/Shared/Entities/Dashboard/falta-entity';
 

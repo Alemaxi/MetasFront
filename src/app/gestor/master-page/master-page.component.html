@@ -1,0 +1,42 @@
+<app-master-page-layout >
+
+    <a class="sidenav-item" sidenav-top [routerLink]="['/main']" (click)="ToggleSidenav()">
+        <mat-icon class="sidenav-icon" svgIcon="dashboard"></mat-icon>
+        <span>{{masterPageLinguagem?.DashboardLabel}}</span>
+    </a>
+
+    <a class="sidenav-item" sidenav-top [routerLink]="['/main','minhacelula']" (click)="ToggleSidenav()">
+        <mat-icon class="sidenav-icon" svgIcon="formulario_metas"></mat-icon>
+        <span>{{masterPageLinguagem?.formularioMetas}}</span>
+    </a>
+
+    <a class="sidenav-item" sidenav-top [routerLink]="['/main','Cronograma']" (click)="ToggleSidenav()">
+        <mat-icon class="sidenav-icon" svgIcon="cronograma_metas"></mat-icon>
+        <span>{{masterPageLinguagem?.cronogramaLabel}}</span>
+    </a>
+
+    <a class="sidenav-item" sidenav-top [routerLink]="['/main','historico']" (click)="ToggleSidenav()">
+        <mat-icon class="sidenav-icon" svgIcon="archive"></mat-icon>
+        <span>{{masterPageLinguagem?.historicoLabel}}</span>
+    </a>
+
+
+    <!-- ############## sideItem ############## -->
+    <a class="sideItem" [routerLink]="['dashboard']" icons-top>
+        <mat-icon svgIcon="dashboard"></mat-icon>
+    </a>
+
+    <a class="sideItem" [routerLink]="['dashboard']" icons-top>
+        <mat-icon svgIcon="formulario_metas"></mat-icon>
+    </a>
+
+    <a class="sideItem" [routerLink]="['/main','planejamento']" icons-top>
+        <mat-icon svgIcon="cronograma_metas"></mat-icon>
+    </a>
+
+    <a class="sideItem" [routerLink]="['/main','historico']" icons-top>
+        <mat-icon svgIcon="archive"></mat-icon>
+    </a>
+
+    <router-outlet router></router-outlet>
+</app-master-page-layout>

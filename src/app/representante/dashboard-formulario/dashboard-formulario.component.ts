@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ITabelaCampos } from '../../../liguagens/Linguagem-modulos/home-linguagem-entities'
 import { AppStateService } from '../../services/app-state/app-state.service';
 import { DashboardService } from '../../services/Dashboard/dashboard.service';
 import { GenericDashboard } from '../../shared/components/Generics/generic-dashboard';

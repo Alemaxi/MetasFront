@@ -1,4 +1,4 @@
-export interface IIndicadorEntity {
+export interface IndicadorEntity {
     indicador: string;
     unidadeMedida:string;
     frequencia:number;

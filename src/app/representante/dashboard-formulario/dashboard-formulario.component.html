@@ -1,4 +1,4 @@
-<app-dashboard-formulario-layout>
+<app-dashboard-formulario-layout [dashboardLinguagem]="dashboardLinguagem" (mesNavegado)="MesNavegado($event)">
 
     
     <a href="" class="action-button-white" actions-area>
@@ -16,13 +16,21 @@
         <span>Avaliar resultados</span>
     </a>
 
+    <div body class="form-actions-area">
+        <a class="action-button-red">Remover indicador</a>
+        <a class="action-button-white">adicionar indicadores</a>
+    </div>
 
-    <app-representante-indicadores-table [tabelaLinguagem]="dashboardLinguagem?.tabela" body></app-representante-indicadores-table>
+    <app-representante-indicadores-table *ngIf="showMes" 
+        [tabelaLinguagem]="dashboardLinguagem?.tabela" body>
+    </app-representante-indicadores-table>
 
-    <div class="home-body" *ngIf="!showMes" >
+    <div body class="home-body" *ngIf="!showMes" >
+        
         <app-resulthome-table [resultadosLinguagem]="dashboardLinguagem?.tabelaResultado" [resultados]="resultadosList"></app-resulthome-table>
       
         <app-faltahome-table [faltasLinguagem]="dashboardLinguagem?.tabelaFalta" [faltas]="faltas"></app-faltahome-table>
-      </div>
+    
+    </div>
 
 </app-dashboard-formulario-layout>

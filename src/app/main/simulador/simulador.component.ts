@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { IIndicadorEntity } from '../../shared/Entities/Dashboard/indicador-entity';
+import { IndicadorEntity } from '../../shared/Entities/Dashboard/indicador-entity';
 
-const listSimulator: IIndicadorEntity[] = [
+const listSimulator: IndicadorEntity[] = [
   {
     indicador: 'nomeIndicador',
     unidadeMedida: '%',
@@ -45,7 +45,7 @@ const listSimulator: IIndicadorEntity[] = [
 })
 export class SimuladorComponent implements OnInit {
 
-  itemsList: IIndicadorEntity[] = listSimulator;
+  itemsList: IndicadorEntity[] = listSimulator;
 
   constructor() { }
 

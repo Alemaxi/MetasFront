@@ -6,9 +6,11 @@ import { CicloEntity } from '../../../main/Shared/Entities/Master-Page/ciclo-ent
 
 import { AppStateService } from '../../../services/app-state/app-state.service';
 import { MasterPageService } from '../../../services/master-page/master-page.service';
+import { TreinamentoDialogComponent } from '../../components/master-page/treinamento-dialog/treinamento-dialog.component';
 
 import { IMasterPage } from '../../../../liguagens/Linguagem-modulos/master-page-linguagem-entities';
 
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-master-page-layout',
@@ -25,6 +27,7 @@ export class MasterPageLayoutComponent implements OnInit {
   constructor(
     protected masterPage: MasterPageService,
     protected appState: AppStateService,
+    protected dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -35,6 +38,12 @@ export class MasterPageLayoutComponent implements OnInit {
     this.masterPage.GetCiclos().subscribe(x => {
       this.ciclo = x;
     })
+
+    this.dialog.open(TreinamentoDialogComponent,
+      {
+        minWidth: 700,
+        data: this.appState.GetAppLinguagem(),
+      });
   }
 
   CicloSelecionado(x: Event): void {
