@@ -1,5 +1,22 @@
 <app-dashboard-formulario-layout [dashboardLinguagem]="dashboardLinguagem" 
     (mesNavegado)="MesNavegado($event)">
+
+    <a href="" class="action-button-white" actions-area>
+        <mat-icon>print</mat-icon>
+        <span>Imprimir</span>
+    </a>
+    
+    <a href="" class="action-button-white" actions-area>
+        <mat-icon>save</mat-icon>
+        <span>salvar</span>
+    </a>
+    
+    <a href="" class="action-button" actions-area>
+        <mat-icon>check</mat-icon>
+        <span>Avaliar resultado</span>
+    </a>
+
+
     <div body *ngIf="showMes" style="width: 100%;">
         <div style="width: 100%;" *ngFor="let formulario of formularioList">
             <app-home-table 

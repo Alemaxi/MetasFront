@@ -1,12 +1,12 @@
-import { Component, EventEmitter, Input, OnInit, Output, AfterViewInit} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, AfterViewInit } from '@angular/core';
 
-import { DashboardService } from '../../../../services/Dashboard/dashboard.service';
 import { RepresentanteIndicadorEntity } from '../../../Entities/Dashboard/representante/representante-indicador-entity';
 import { FormularioIndicadorEntity } from '../../../Entities/Dashboard/representante/formulario-state-indicador';
 import { ITabelaCampos } from '../../../../../liguagens/Linguagem-modulos/home-linguagem-entities';
 import { edicaoTabelaEnum } from '../../../Enum/edicao-tabela-enum';
 
 import { MatCheckboxChange } from '@angular/material/checkbox';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-representante-indicadores-table',
@@ -15,36 +15,37 @@ import { MatCheckboxChange } from '@angular/material/checkbox';
 })
 export class RepresentanteIndicadoresTableComponent implements OnInit {
 
-  @Input() formState: FormularioIndicadorEntity = new FormularioIndicadorEntity();
+  @Input() formStateEntry = new Subject<FormularioIndicadorEntity>();
   @Input() tabelaLinguagem: ITabelaCampos | undefined;
   @Input() showSelect: boolean = true;
   @Input() edicao: edicaoTabelaEnum = 1;
-
+  
   @Output() registroMudado = new EventEmitter<FormularioIndicadorEntity>();
-
+  
+  formState: FormularioIndicadorEntity = new FormularioIndicadorEntity();
 
   constructor(
-    protected dashboard:DashboardService
   ) { }
 
 
   ngOnInit(): void {
-    this.dashboard.GetFormulariosRepresentante().subscribe(x => {
-      this.formState.indicadores = x;
+    this.formStateEntry.subscribe(x => {
+      this.formState = x;
       this.AddNovoIndicador();
     })
   }
 
   AddNovoIndicador(): void {
-    if(this.formState.indicadores.length < 6){
+    if (this.formState.indicadores.length < 6) {
 
       let newIndicador = new RepresentanteIndicadorEntity();
       newIndicador.novoIndicador = true;
-      newIndicador.codNovoIndicador = this.formState.indicadores.filter(x=>{
-        return x.novoIndicador
-      }).length; 
-
       this.formState.indicadores.push(newIndicador);
+
+      newIndicador.codNovoIndicador = this.formState.indicadores.filter(x => {
+        return x.novoIndicador
+      }).length;
+
     }
   }
 
@@ -58,13 +59,13 @@ export class RepresentanteIndicadoresTableComponent implements OnInit {
     return result;
   }
 
-  ChangeMainCheck(item: MatCheckboxChange): void{
-    if(item.checked){
-      this.formState.indicadores.forEach( x => {
+  ChangeMainCheck(item: MatCheckboxChange): void {
+    if (item.checked) {
+      this.formState.indicadores.forEach(x => {
         x.selected = true;
       })
-    }else{
-      this.formState.indicadores.forEach( x => {
+    } else {
+      this.formState.indicadores.forEach(x => {
         x.selected = false;
       })
     }
@@ -73,28 +74,35 @@ export class RepresentanteIndicadoresTableComponent implements OnInit {
   AllChecked(): boolean {
     let result: boolean = true;
 
-    this.formState.indicadores.forEach(x=>{
-      if (!x.selected){
+    this.formState.indicadores.forEach(x => {
+      if (!x.selected) {
         result = false;
       }
     })
     return result;
   }
 
-  GetNovosIndicadores():RepresentanteIndicadorEntity[]{
+  GetNovosIndicadores(): RepresentanteIndicadorEntity[] {
     return this.formState.indicadores.filter(x => x.novoIndicador);
   }
 
-  GetIndicadoresRegistrados(): RepresentanteIndicadorEntity[]{
+  GetIndicadoresRegistrados(): RepresentanteIndicadorEntity[] {
     return this.formState.indicadores.filter(x => !x.novoIndicador);
   }
 
-  ChangeRow(item:MatCheckboxChange,indicador: RepresentanteIndicadorEntity){
+  ChangeRow(item: MatCheckboxChange, indicador: RepresentanteIndicadorEntity) {
     indicador.selected = item.checked;
   }
 
+  MudancaNoNovoRegistro(idAtual: number | undefined): void {
+    if (idAtual != undefined && idAtual == this.formState.indicadores.
+      filter(x => x.novoIndicador).length) {
+      this.AddNovoIndicador();
+    }
+    this.registroMudado.emit(this.formState);
+  }
+
   MudancaNoRegistro(): void {
-    this.AddNovoIndicador();
     this.registroMudado.emit(this.formState);
   }
 }

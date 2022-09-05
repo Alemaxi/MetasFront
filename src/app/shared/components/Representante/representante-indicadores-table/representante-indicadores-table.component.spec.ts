@@ -54,7 +54,7 @@ describe('RepresentanteIndicadoresTableComponent', () => {
     component.formState.indicadores[0].novoIndicador=false;
 
     expect(component.GetNovosIndicadores().length).toBeLessThanOrEqual(0);
-  })
+  });
 
 
   it('formState.indicadores should contain 6 indicadores', () => {
@@ -70,7 +70,7 @@ describe('RepresentanteIndicadoresTableComponent', () => {
     component.formState.indicadores.push(indicador);
 
     expect(component.GetNovosIndicadores().length).toBeLessThanOrEqual(6);
-  })
+  });
 
   it('ChangeMainCheck should select all indicadores',() => {
     indicador.selected=false;
@@ -83,7 +83,7 @@ describe('RepresentanteIndicadoresTableComponent', () => {
     let allSelected = component.formState.indicadores.filter(x=> x.selected);
 
     expect(allSelected.length).toBeGreaterThanOrEqual(1);
-  })
+  });
 
   it('ChangeMainCheck should unselect all indicadores',() => {
     let matCheckboxChange = new MatCheckboxChange();
@@ -93,5 +93,24 @@ describe('RepresentanteIndicadoresTableComponent', () => {
     let allSelected = component.formState.indicadores.filter(x=> x.selected);
 
     expect(allSelected.length).toBeGreaterThanOrEqual(0);
+  });
+
+  it('AddNovoIndicador should add a new indicador with id equal 1', ()=>{
+    component.AddNovoIndicador();
+
+    expect(component.formState.indicadores.filter(x => x.novoIndicador).length).toBe(1);
+    expect(component.formState.indicadores.filter(x => x.novoIndicador)[0].codNovoIndicador).
+    toBe(1);
+  });
+
+  it('MudancaNovoRegistro should create a new register and sent an output', () => {
+    component.AddNovoIndicador()
+
+    component.registroMudado.subscribe(x => {
+      expect(x.indicadores.length).toBe(2);
+      expect(x.indicadores[0].novoIndicador).toBeTrue();
+    })
+
+    component.MudancaNoNovoRegistro(component.formState.indicadores[0].codNovoIndicador);
   })
 });

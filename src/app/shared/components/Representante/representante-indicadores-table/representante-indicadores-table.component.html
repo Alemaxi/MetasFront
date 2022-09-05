@@ -109,14 +109,14 @@
 
             <td class="indicadorColumn">
                 <input 
-                (change)="MudancaNoRegistro()"
+                (change)="MudancaNoNovoRegistro(item?.codNovoIndicador)"
                 class="editable-field" 
                 type="text" 
                 [value]="item.indicador?item.indicador:''">
             </td>
 
             <td>
-                <select class="editable-field" name="" id="" (change)="MudancaNoRegistro()">
+                <select class="editable-field" name="" id="" (change)="MudancaNoNovoRegistro(item?.codNovoIndicador)">
                     <option value="1">%</option>
                     <option value="1">Quilograma</option>
                     <option value="1">Litro</option>
@@ -124,7 +124,7 @@
             </td>
 
             <td >
-                <select class="editable-field" name="" id="" (change)="MudancaNoRegistro()">
+                <select class="editable-field" name="" id="" (change)="MudancaNoNovoRegistro(item?.codNovoIndicador)">
                     <option value="1">Mensal</option>
                     <option value="1">Trimestral</option>
                     <option value="1">Semestral</option>
@@ -133,7 +133,7 @@
 
             <td class="numericColumn">
                 <input 
-                (change)="MudancaNoRegistro()"
+                (change)="MudancaNoNovoRegistro(item?.codNovoIndicador)"
                 class="editable-field"  
                 type="number" 
                 [value]="item.peso">
@@ -141,7 +141,7 @@
 
             <td class="numericColumn">
                 <input 
-                (change)="MudancaNoRegistro()"
+                (change)="MudancaNoNovoRegistro(item?.codNovoIndicador)"
                 class="editable-field"  
                 type="number" 
                 [value]="item.minimo">
@@ -149,7 +149,7 @@
 
             <td class="numericColumn">
                 <input 
-                (change)="MudancaNoRegistro()"
+                (change)="MudancaNoNovoRegistro(item?.codNovoIndicador)"
                 class="editable-field"  
                 type="number" 
                 [value]="item.planejado">
@@ -157,7 +157,7 @@
 
             <td class="numericColumn">
                 <input 
-                (change)="MudancaNoRegistro()"
+                (change)="MudancaNoNovoRegistro(item?.codNovoIndicador)"
                 class="editable-field"  
                 type="number" 
                 [value]="item.desafio">

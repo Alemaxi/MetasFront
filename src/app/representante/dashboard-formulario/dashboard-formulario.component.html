@@ -13,16 +13,17 @@
     
     <a href="" class="action-button" actions-area>
         <mat-icon>check</mat-icon>
-        <span>Avaliar resultados</span>
+        <span>Enviar para aprovação</span>
     </a>
 
-    <div body class="form-actions-area">
+    <div body class="form-actions-area" *ngIf="showMes">
         <a class="action-button-red">Remover indicador</a>
         <a class="action-button-white">adicionar indicadores</a>
     </div>
 
     <app-representante-indicadores-table *ngIf="showMes" 
-        [tabelaLinguagem]="dashboardLinguagem?.tabela" body>
+        [tabelaLinguagem]="dashboardLinguagem?.tabela" 
+        [formStateEntry]="formStateSubject" body>
     </app-representante-indicadores-table>
 
     <div body class="home-body" *ngIf="!showMes" >

@@ -47,14 +47,6 @@ const listSimulator: IndicadorEntity[] = [
   }
 ];
 
-
-
-const listIndicadorRepresentante: RepresentanteIndicadorEntity[] = [
-  new RepresentanteIndicadorEntity(),
-  new RepresentanteIndicadorEntity(),
-  new RepresentanteIndicadorEntity(),
-];
-
 const mockResultados: IResultadoEntity[] = [
   {
     titulo: 'mocked', semestre1:
@@ -144,7 +136,10 @@ export class DashboardService extends GenericService {
     let resultado = new Subject<RepresentanteIndicadorEntity[]>();
 
     setTimeout(() => {
-      resultado.next(listIndicadorRepresentante);
+      resultado.next([
+        new RepresentanteIndicadorEntity(),
+        new RepresentanteIndicadorEntity(),
+        new RepresentanteIndicadorEntity(),]);
     }, 1);
 
     return resultado;
