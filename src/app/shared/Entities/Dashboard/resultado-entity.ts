@@ -1,10 +1,10 @@
-export interface IResultadoEntity{
-    titulo:string;
-    semestre1: Semestre;
-    semestre2: Semestre;
+export class ResultadoEntity{
+    titulo:string | undefined;
+    semestre1: Semestre | undefined;
+    semestre2: Semestre | undefined;
 }
 
-export interface Semestre{
-    resultado:number;
-    periodo:string;
+export class Semestre{
+    resultado:number | undefined;
+    periodo:string | undefined;
 }

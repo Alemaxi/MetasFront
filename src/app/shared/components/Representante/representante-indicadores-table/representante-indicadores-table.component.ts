@@ -19,9 +19,9 @@ export class RepresentanteIndicadoresTableComponent implements OnInit {
   @Input() tabelaLinguagem: ITabelaCampos | undefined;
   @Input() showSelect: boolean = true;
   @Input() edicao: edicaoTabelaEnum = 1;
-  
+
   @Output() registroMudado = new EventEmitter<FormularioIndicadorEntity>();
-  
+
   formState: FormularioIndicadorEntity = new FormularioIndicadorEntity();
 
   constructor(
@@ -31,7 +31,8 @@ export class RepresentanteIndicadoresTableComponent implements OnInit {
   ngOnInit(): void {
     this.formStateEntry.subscribe(x => {
       this.formState = x;
-      this.AddNovoIndicador();
+      if (this.formState.indicadores.filter(x => x.novoIndicador).length == 0)
+        this.AddNovoIndicador();
     })
   }
 

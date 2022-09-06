@@ -4,8 +4,8 @@ import { AppStateService } from '../../../../services/app-state/app-state.servic
 import { INavegacaoMeses } from '../../../../../liguagens/Linguagem-modulos/home-linguagem-entities'
 import { DashboardService } from '../../../../services/Dashboard/dashboard.service';
 import { IndicadorEntity } from '../../../../main/Shared/Entities/Dashboard/indicador-entity';
-import { IResultadoEntity } from '../../../../main/Shared/Entities/Dashboard/resultado-entity';
-import { IFaltasEntity } from '../../../../main/Shared/Entities/Dashboard/falta-entity';
+import { ResultadoEntity } from '../../../../main/Shared/Entities/Dashboard/resultado-entity';
+import { FaltaEntity } from '../../../../main/Shared/Entities/Dashboard/falta-entity';
 
 enum MesEnum{
   jan, fev,mar,abr,mai,jun,jul,ago,set,out,nov,dec,res

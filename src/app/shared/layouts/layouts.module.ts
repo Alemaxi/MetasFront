@@ -25,6 +25,7 @@ import { GeneralCpntsModule } from '../components/General/general-cpnts.module';
     MasterPageLayoutComponent,
     DashboardFormularioLayoutComponent,
     MasterPageCpntsModule,
+    GeneralPageComponent
   ],
   imports: [
     CommonModule,

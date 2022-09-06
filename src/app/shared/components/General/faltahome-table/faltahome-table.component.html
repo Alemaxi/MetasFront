@@ -5,20 +5,11 @@
         <th class="other-columns">{{faltasLinguagem?.column3}}</th>
     </tr>
 
-    <tr>
-        <td>{{faltasLinguagem?.row1}}</td>
-        <td>{{faltas?.faltaInjustificada?.dataInicio | date:'dd/MM/yy'}}</td>
-        <td>{{faltas?.faltaInjustificada?.dataFim | date:'dd/MM/yy'}}</td>
+    <tr *ngFor="let falta of faltas">
+        <td>{{falta.titulo}}</td>
+        <td>{{falta.dataInicio | date:'dd/MM/yy'}}</td>
+        <td>{{falta.dataFim | date:'dd/MM/yy'}}</td>
     </tr>
-    <tr>
-        <td>{{faltasLinguagem?.row2}}</td>
-        <td>{{faltas?.suspensao?.dataInicio | date:'dd/MM/yy'}}</td>
-        <td>{{faltas?.suspensao?.dataFim | date:'dd/MM/yy'}}</td>
-    </tr>
-    <tr>
-        <td>{{faltasLinguagem?.row3}}</td>
-        <td>{{faltas?.afastamento?.dataInicio | date:'dd/MM/yy'}}</td>
-        <td>{{faltas?.afastamento?.dataFim | date:'dd/MM/yy'}}</td>
-    </tr>
+    
 </table>
 

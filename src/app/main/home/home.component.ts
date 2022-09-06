@@ -7,9 +7,9 @@ import { IDashboardStatus } from '../../shared/Entities/Dashboard/dashboard-celu
 import { DashboardService } from '../../services/Dashboard/dashboard.service';
 import { AppStateService } from '../../services/app-state/app-state.service';
 import { IHome } from '../../../liguagens/Linguagem-modulos/home-linguagem-entities';
-import { IResultadoEntity } from '../../shared/Entities/Dashboard/resultado-entity';
+import { ResultadoEntity } from '../../shared/Entities/Dashboard/resultado-entity';
 import { IFormularioEntity } from '../../shared/Entities/Dashboard/formulario-entity';
-import { IFaltasEntity } from '../../shared/Entities/Dashboard/falta-entity';
+import { FaltaEntity } from '../../shared/Entities/Dashboard/falta-entity';
 import { MesEnum } from '../../shared/Enum/MesEnum';
 
 
@@ -46,9 +46,9 @@ export class HomeComponent implements OnInit,AfterViewInit {
   
   homeLinguagem: IHome | undefined;
   itemsList: IndicadorEntity[] = [];
-  resultadosList: IResultadoEntity[] = [];
+  resultadosList: ResultadoEntity[] = [];
   formularioList: IFormularioEntity[] = [];
-  faltas: IFaltasEntity | undefined;
+  faltas: FaltaEntity[] = [];
 
 
   constructor(

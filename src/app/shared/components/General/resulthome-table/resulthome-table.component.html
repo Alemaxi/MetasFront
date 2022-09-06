@@ -8,17 +8,17 @@
 
         <tr>
             <td>{{resultadosLinguagem?.row2}}</td>
-            <td>{{resultado.semestre1.resultado}}</td>
-            <td>{{resultado.semestre1.periodo}}</td>
+            <td>{{resultado.semestre1?.resultado}}</td>
+            <td>{{resultado.semestre1?.periodo}}</td>
         </tr>
         <tr>
             <td>{{resultadosLinguagem?.row3}}</td>
-            <td>{{resultado.semestre2.resultado}}</td>
-            <td>{{resultado.semestre2.periodo}}</td>
+            <td>{{resultado.semestre2?.resultado}}</td>
+            <td>{{resultado.semestre2?.periodo}}</td>
         </tr>
         <tr>
             <td class="total">{{resultadosLinguagem?.row4}}</td>
-            <td class="total">{{resultado.semestre1.resultado + resultado.semestre2.resultado}}</td>
+            <td class="total">{{GetTotalProporcional()}}</td>
             <td></td>
         </tr>
 </table>

@@ -5,6 +5,7 @@ import { MetasStepperComponent } from './metas-stepper/Metas-stepper.component';
 import { NavegacaoMesesComponent } from './navegacao-meses/navegacao-meses.component';
 import { ResulthomeTableComponent } from './resulthome-table/resulthome-table.component';
 import { HomeTableComponent } from './home-table/home-table.component';
+import { PaginatorComponent } from './paginator/paginator.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { HomeTableComponent } from './home-table/home-table.component';
     NavegacaoMesesComponent,
     MetasStepperComponent,
     ResulthomeTableComponent,
-    HomeTableComponent
+    HomeTableComponent,
+    PaginatorComponent
   ],
   imports: [
     CommonModule
@@ -23,7 +25,8 @@ import { HomeTableComponent } from './home-table/home-table.component';
     NavegacaoMesesComponent,
     MetasStepperComponent,
     ResulthomeTableComponent,
-    HomeTableComponent
+    HomeTableComponent,
+    PaginatorComponent
   ]
 })
 export class GeneralCpntsModule { }

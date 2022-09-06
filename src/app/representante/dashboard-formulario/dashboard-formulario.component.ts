@@ -22,7 +22,7 @@ export class DashboardFormularioComponent extends GenericDashboard implements On
   constructor(
     public dashboard: DashboardService,
     protected appState: AppStateService
-  ) { super(dashboard,appState); }
+  ) { super(dashboard, appState); }
 
   ngOnInit(): void {
     this.runInOnInit();
@@ -36,25 +36,30 @@ export class DashboardFormularioComponent extends GenericDashboard implements On
   override MesNavegado(mes: number): void {
     this.selectedMes = mes;
 
-        if (this.selectedMes != 12) {
-            this.showMes = true;
-            this.dashboard.GetFormulariosRepresentante().subscribe(x => {
-                this.formState.indicadores = x;
-                this.formStateSubject.next(this.formState);
-            });
-        }
-        else {
+    if (this.selectedMes != 12) {
+      this.showMes = true;
+      this.dashboard.GetFormulariosRepresentante().subscribe(x => {
+        this.formState.indicadores = x;
+        this.formStateSubject.next(this.formState);
+      });
+    }
+    else {
+      this.formState.indicadores = [];
+      this.dashboard.GetFaltas().subscribe(x => {
+        this.faltas = x;
+      });
 
-            this.dashboard.GetFaltas().subscribe(x => {
-                this.faltas = x;
-            });
+      this.dashboard.GetResultados().subscribe(x => {
+        this.resultadosList = x;
+      });
 
-            this.dashboard.GetResultados().subscribe(x => {
-                this.resultadosList = x;
-            });
+      this.showMes = false;
+    }
+  }
 
-            this.showMes = false;
-        }
+  RemoverIndices(): void {
+      this.formState.indicadores = this.formState.indicadores.filter(x => !x.selected);
+      this.formStateSubject.next(this.formState);
   }
 
 }

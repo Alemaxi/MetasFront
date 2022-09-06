@@ -1,14 +1,14 @@
 <svg style="width:100%;">
-    
-    
-    <line class="line" x1="6%" y1="50%" x2="18%" y2="50%"  [class.unavailable]="!biggerOrEqualTo(1)" />
+
+
+    <line class="line" x1="6%" y1="50%" x2="18%" y2="50%" [class.unavailable]="!biggerOrEqualTo(1)" />
     <line class="line" x1="20%" y1="50%" x2="32%" y2="50%" [class.unavailable]="!biggerOrEqualTo(2)" />
     <line class="line" x1="34%" y1="50%" x2="46%" y2="50%" [class.unavailable]="!biggerOrEqualTo(3)" />
     <line x1="48%" y1="50%" x2="60%" y2="50%" class="line" [class.unavailable]="!biggerOrEqualTo(4)" />
     <line class="line" x1="62%" y1="50%" x2="74%" y2="50%" [class.unavailable]="!biggerOrEqualTo(5)" />
     <line class="line" x1="76%" y1="50%" x2="88%" y2="50%" [class.unavailable]="!biggerOrEqualTo(6)" />
-    
-    
+
+
     <circle cx="5%" cy="50%" r="1.5%" class="circle" [class.unavailable]="!biggerOrEqualTo(0)"
         [class.current]="status==0" />
     <circle cx="19%" cy="50%" r="1.5%" class="circle" [class.unavailable]="!biggerOrEqualTo(1)"
@@ -23,7 +23,7 @@
         [class.current]="status==5" />
     <circle cx="61%" cy="50%" r="1.5%" class="circle" [class.unavailable]="!biggerOrEqualTo(4)"
         [class.current]="status==4" />
-    
+
 
     <text [class.text]="biggerOrEqualTo(0)" x="4%" y="72%" font-size="100%"
         [class.text-unavailable]="!biggerOrEqualTo(0)">{{stepperLinguagem?.step1?.line1}}</text>
@@ -39,11 +39,15 @@
         [class.text-unavailable]="!biggerOrEqualTo(2)">{{stepperLinguagem?.step3?.line1}}</text>
     <text [class.text]="biggerOrEqualTo(2)" x="32%" y="82%" font-size="12px"
         [class.text-unavailable]="!biggerOrEqualTo(2)">{{stepperLinguagem?.step3?.line2}}</text>
+    <text [class.text]="biggerOrEqualTo(2)" x="34%" y="42%" font-size="12px"
+        [class.text-unavailable]="!biggerOrEqualTo(2)" *ngIf="status==2">Jul.</text>
 
     <text [class.text]="biggerOrEqualTo(3)" x="46%" y="72%" font-size="12px"
         [class.text-unavailable]="!biggerOrEqualTo(3)">{{stepperLinguagem?.step4?.line1}}</text>
     <text [class.text]="biggerOrEqualTo(3)" x="46%" y="82%" font-size="12px"
         [class.text-unavailable]="!biggerOrEqualTo(3)">{{stepperLinguagem?.step4?.line2}}</text>
+    <text [class.text]="biggerOrEqualTo(3)" x="48%" y="42%" font-size="12px"
+        [class.text-unavailable]="!biggerOrEqualTo(3)" *ngIf="status==3">Jul.</text>
 
     <text [class.text]="biggerOrEqualTo(4)" x="60%" y="72%" font-size="12px"
         [class.text-unavailable]="!biggerOrEqualTo(4)">{{stepperLinguagem?.step5?.line1}}</text>
@@ -54,10 +58,14 @@
         [class.text-unavailable]="!biggerOrEqualTo(5)">{{stepperLinguagem?.step6?.line1}}</text>
     <text x="74%" y="82%" font-size="12px" [class.text]="biggerOrEqualTo(6)"
         [class.text-unavailable]="!biggerOrEqualTo(5)">{{stepperLinguagem?.step6?.line2}}</text>
+    <text [class.text]="biggerOrEqualTo(5)" x="76%" y="42%" font-size="12px"
+        [class.text-unavailable]="!biggerOrEqualTo(5)" *ngIf="status==5">Jan.</text>
 
     <text x="88%" y="72%" font-size="12px" [class.text]="biggerOrEqualTo(6)"
         [class.text-unavailable]="!biggerOrEqualTo(6)">{{stepperLinguagem?.step7?.line1}}</text>
     <text x="88%" y="82%" font-size="12px" [class.text]="biggerOrEqualTo(6)"
         [class.text-unavailable]="!biggerOrEqualTo(6)">{{stepperLinguagem?.step7?.line2}}</text>
-    
+    <text [class.text]="biggerOrEqualTo(6)" x="90%" y="42%" font-size="12px"
+        [class.text-unavailable]="!biggerOrEqualTo(6)" *ngIf="status==6" >Jan.</text>
+
 </svg>

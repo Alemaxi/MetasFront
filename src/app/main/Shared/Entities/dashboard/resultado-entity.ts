@@ -1,4 +1,4 @@
-export interface IResultadoEntity{
+export interface ResultadoEntity{
     titulo:string;
     semestre1: Semestre;
     semestre2: Semestre;

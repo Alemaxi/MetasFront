@@ -1,0 +1,19 @@
+@import '../../shared/css/general/general-title.scss';
+@import '../../shared/css/dashboard/action-button.scss';
+@import '../../shared/css/general/general-inputs.scss';
+@import '../../shared/css/general/general-table.scss';
+
+
+.title{
+    margin-bottom: 50px;
+}
+
+
+.filtros {
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}

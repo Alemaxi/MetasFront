@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 
 import { RepresentanteIndicadoresTableComponent } from './representante-indicadores-table.component';
-import { dashBoardServiceMock } from './Mocks';
+import { DashBoardServiceMock } from '../../../../shared/Mocks/DashBoardMock';
 import { RepresentanteIndicadorEntity } from '../../../Entities/Dashboard/representante/representante-indicador-entity'
 
 import { DashboardService } from '../../../../services/Dashboard/dashboard.service';
@@ -20,7 +20,7 @@ describe('RepresentanteIndicadoresTableComponent', () => {
       imports: [],
       providers: [
         RepresentanteIndicadoresTableComponent,
-        { provide: DashboardService, useClass: dashBoardServiceMock },
+        { provide: DashboardService, useClass: DashBoardServiceMock },
       ]
     })
       .compileComponents();

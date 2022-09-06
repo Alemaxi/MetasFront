@@ -1,0 +1,22 @@
+<table  class="general-table">
+    <tr>
+        <th>oi</th>
+        <th style="display:flex; justify-content: space-between; align-items: center;">
+            ID <mat-icon width="5px">arrow_drop_down</mat-icon></th>
+        <th> <span>Processo</span></th>
+        <th>Nome do Indicador</th>
+        <th>Un. Medida</th>
+        <th>Frequência</th>
+        <th>Descrição</th>
+    </tr>
+
+    <tr *ngFor="let registro of indicadoresRegistrados">
+        <td>{{registro.selected}}</td>
+        <td>{{registro.id}}</td>
+        <td>{{registro.processo}}</td>
+        <td>{{registro.nomeIndicador}}</td>
+        <td>{{registro.unidadeMedida}}</td>
+        <td>{{registro.frequencia}}</td>
+        <td>{{registro.descricao}}</td>
+    </tr>
+</table>

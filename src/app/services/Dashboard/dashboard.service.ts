@@ -3,10 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { Subject, of } from 'rxjs';
 
 import { GenericService } from '../Generic-service';
-import { IFaltasEntity } from '../../shared/Entities/Dashboard/falta-entity';
+import { FaltaEntity } from '../../shared/Entities/Dashboard/falta-entity';
 import { IndicadorEntity } from '../../shared/Entities/Dashboard/indicador-entity';
 import { IDashboardStatus } from '../../shared/Entities/Dashboard/dashboard-celula-status';
-import { IResultadoEntity } from '../../shared/Entities/Dashboard/resultado-entity';
+import { ResultadoEntity } from '../../shared/Entities/Dashboard/resultado-entity';
 import { IFormularioEntity } from '../../shared/Entities/Dashboard/formulario-entity';
 import { IFormularioReq } from '../../shared/Entities/Dashboard/formulario-req';
 import { RepresentanteIndicadorEntity } from '../../shared/Entities/Dashboard/representante/representante-indicador-entity';
@@ -47,7 +47,7 @@ const listSimulator: IndicadorEntity[] = [
   }
 ];
 
-const mockResultados: IResultadoEntity[] = [
+const mockResultados: ResultadoEntity[] = [
   {
     titulo: 'mocked', semestre1:
       { periodo: 'um ai', resultado: 10 }, semestre2: { periodo: 'um ai', resultado: 10 }
@@ -58,20 +58,6 @@ const mockResultados: IResultadoEntity[] = [
   },
 ];
 
-const mockFaltas: IFaltasEntity = {
-  afastamento: {
-    dataFim: new Date(),
-    dataInicio: new Date
-  },
-  faltaInjustificada: {
-    dataFim: new Date(),
-    dataInicio: new Date
-  },
-  suspensao: {
-    dataFim: new Date(),
-    dataInicio: new Date
-  },
-}
 
 const dashboardStatus: IDashboardStatus = {
   dataAtualizacao: new Date(),
@@ -102,8 +88,8 @@ export class DashboardService extends GenericService {
     return resultado;
   }
 
-  public GetResultados(): Subject<IResultadoEntity[]> {
-    let resultado = new Subject<IResultadoEntity[]>();
+  public GetResultados(): Subject<ResultadoEntity[]> {
+    let resultado = new Subject<ResultadoEntity[]>();
 
     setTimeout(() => {
       resultado.next(mockResultados);
@@ -112,12 +98,14 @@ export class DashboardService extends GenericService {
     return resultado;
   }
 
-  public GetFaltas(): Subject<IFaltasEntity>{
-    let resultado = new Subject<IFaltasEntity>();
+  public GetFaltas(): Subject<FaltaEntity[]>{
+    let resultado = new Subject<FaltaEntity[]>();
 
     setTimeout(() => {
-      resultado.next(mockFaltas);
-    }, 1);
+      resultado.next([
+        {dataFim:new Date(),dataInicio: new Date(), titulo: 'faltou e ponto.'}
+      ]);
+    }, 0);
 
     return resultado;
   }
@@ -135,11 +123,10 @@ export class DashboardService extends GenericService {
   public GetFormulariosRepresentante(): Subject<RepresentanteIndicadorEntity[]> {
     let resultado = new Subject<RepresentanteIndicadorEntity[]>();
 
+    let array: RepresentanteIndicadorEntity[] = [];
+
     setTimeout(() => {
-      resultado.next([
-        new RepresentanteIndicadorEntity(),
-        new RepresentanteIndicadorEntity(),
-        new RepresentanteIndicadorEntity(),]);
+      resultado.next(array);
     }, 1);
 
     return resultado;

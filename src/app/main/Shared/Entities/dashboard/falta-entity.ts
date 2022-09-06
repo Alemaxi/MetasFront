@@ -1,4 +1,4 @@
-export interface IFaltasEntity{
+export interface FaltaEntity{
     faltaInjustificada: DatasFalta | undefined;
     suspensao: DatasFalta | undefined;
     afastamento: DatasFalta | undefined;

@@ -10,12 +10,14 @@ import { LayoutsModule } from '../shared/layouts/layouts.module';
 import { MasterPageComponent } from './master-page/master-page.component';
 import { RepresentanteCpntsModule } from '../shared/components/Representante/representante-cpnts.module';
 import { GeneralCpntsModule } from '../shared/components/General/general-cpnts.module';
+import { SelecaoIndicadoresComponent } from './selecao-indicadores/selecao-indicadores.component';
 
 
 @NgModule({
   declarations: [
     DashboardFormularioComponent,
-    MasterPageComponent
+    MasterPageComponent,
+    SelecaoIndicadoresComponent
   ],
   imports: [
     CommonModule,
@@ -25,6 +27,8 @@ import { GeneralCpntsModule } from '../shared/components/General/general-cpnts.m
     MatIconModule,
     RepresentanteCpntsModule,
     GeneralCpntsModule
+  ],
+  providers:[
   ]
 })
 export class RepresentanteModule { }

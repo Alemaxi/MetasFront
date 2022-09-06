@@ -7,33 +7,35 @@ let mockedRepIndic2: RepresentanteIndicadorEntity = new RepresentanteIndicadorEn
 
 let mockedFormIndic: FormularioIndicadorEntity = new FormularioIndicadorEntity();
 
-beforeEach(() => {
-  mockedRepIndic.desafio = 1;
-  mockedRepIndic.frequencia = '1';
-  mockedRepIndic.indicador = 'aa';
-  mockedRepIndic.minimo = 1;
-  mockedRepIndic.planejado = 1;
-  mockedRepIndic.peso = 1;
-  mockedRepIndic.resultado = 1;
-  mockedRepIndic.unidadeMedida = 'a';
-  mockedRepIndic.simulacao = 1;
-
-  mockedRepIndic2.desafio = 1;
-  mockedRepIndic2.frequencia = '1';
-  mockedRepIndic2.indicador = 'aa';
-  mockedRepIndic2.minimo = 1;
-  mockedRepIndic2.planejado = 1;
-  mockedRepIndic2.peso = 1;
-  mockedRepIndic2.resultado = 1;
-  mockedRepIndic2.unidadeMedida = 'a';
-  mockedRepIndic2.simulacao = 1;
-
-  mockedFormIndic.indicadores.push(mockedRepIndic);
-  mockedFormIndic.indicadores.push(mockedRepIndic2);
-})
 
 
 describe('FormularioIndicadorEntity', () => {
+  
+  beforeEach(() => {
+    mockedRepIndic.desafio = 1;
+    mockedRepIndic.frequencia = '1';
+    mockedRepIndic.indicador = 'aa';
+    mockedRepIndic.minimo = 1;
+    mockedRepIndic.planejado = 1;
+    mockedRepIndic.peso = 1;
+    mockedRepIndic.resultado = 1;
+    mockedRepIndic.unidadeMedida = 'a';
+    mockedRepIndic.simulacao = 1;
+  
+    mockedRepIndic2.desafio = 1;
+    mockedRepIndic2.frequencia = '1';
+    mockedRepIndic2.indicador = 'aa';
+    mockedRepIndic2.minimo = 1;
+    mockedRepIndic2.planejado = 1;
+    mockedRepIndic2.peso = 1;
+    mockedRepIndic2.resultado = 1;
+    mockedRepIndic2.unidadeMedida = 'a';
+    mockedRepIndic2.simulacao = 1;
+  
+    mockedFormIndic.indicadores.push(mockedRepIndic);
+    mockedFormIndic.indicadores.push(mockedRepIndic2);
+  })
+
   it('is valid should be true', () => {
     expect(mockedFormIndic.estaValido()).toBeTrue();
   });

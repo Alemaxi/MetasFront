@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { IResultadoEntity, Semestre } from '../../../Entities/Dashboard/resultado-entity';
+import { ResultadoEntity, Semestre } from '../../../Entities/Dashboard/resultado-entity';
 import { ITabelaResultado } from '../../../../../liguagens/Linguagem-modulos/home-linguagem-entities'
 
 @Component({
@@ -10,7 +10,7 @@ import { ITabelaResultado } from '../../../../../liguagens/Linguagem-modulos/hom
 })
 export class ResulthomeTableComponent implements OnInit {
 
-  @Input() resultados: IResultadoEntity[] | undefined;
+  @Input() resultados: ResultadoEntity[] | undefined;
   @Input() resultadosLinguagem: ITabelaResultado | undefined;
 
   constructor() { 
@@ -26,16 +26,19 @@ export class ResulthomeTableComponent implements OnInit {
     ];
   }
 
-  GetTotalAno(resultado: IResultadoEntity): number{
-    return resultado.semestre1.resultado + resultado.semestre2.resultado;
+  GetTotalAno(resultado: ResultadoEntity): number | undefined{
+    let semestre1 = resultado.semestre1?.resultado as number;
+    let semestre2 = resultado.semestre2?.resultado as number;
+
+    return semestre1 + semestre2;
   }
 
   GetTotalProporcional(): number{
     let total = 0;
 
     this.resultados?.forEach(x => {
-      total += x.semestre1.resultado;
-      total += x.semestre2.resultado;
+      total += x?.semestre1?.resultado as number;
+      total += x?.semestre2?.resultado as number;
     })
 
     return total;

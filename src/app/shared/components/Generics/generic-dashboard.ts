@@ -1,7 +1,7 @@
 import { IHome } from '../../../../liguagens/Linguagem-modulos/home-linguagem-entities';
-import { IResultadoEntity } from '../../Entities/Dashboard/resultado-entity';
+import { ResultadoEntity } from '../../Entities/Dashboard/resultado-entity';
 import { IFormularioEntity } from '../../Entities/Dashboard/formulario-entity';
-import { IFaltasEntity } from '../../Entities/Dashboard/falta-entity';
+import { FaltaEntity } from '../../Entities/Dashboard/falta-entity';
 import { IndicadorEntity } from '../../Entities/Dashboard/indicador-entity';
 import { MesEnum } from '../../Enum/MesEnum';
 import { DashboardService } from '../../../services/Dashboard/dashboard.service';
@@ -12,9 +12,9 @@ export class GenericDashboard {
     public selectedMes: MesEnum = MesEnum.jan;
     public dashboardLinguagem: IHome | undefined;
     public showMes: boolean = true;
-    public resultadosList: IResultadoEntity[] = [];
+    public resultadosList: ResultadoEntity[] = [];
     public formularioList: IFormularioEntity[] = [];
-    public faltas: IFaltasEntity | undefined;
+    public faltas: FaltaEntity[] =[];
     public itemsList: IndicadorEntity[] = [];
 
     constructor(

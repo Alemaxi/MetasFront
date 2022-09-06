@@ -1,0 +1,21 @@
+<app-general-page>
+    <h1 title-area class="title">Selecione os indicadores de sua equipe</h1>
+    <a actions-area class="action-button">Adicionar</a>
+    
+    
+    <div body class="filtros">
+        <input type="text" (change)="SetPalavraFiltro($event)" class="general-control" 
+        placeholder="Buscar na tabela por...">
+
+        <select name="" id="" class="general-control">
+            <option value="1">opcao 1</option>
+            <option value="1">opcao 2</option>
+            <option value="1">opcao 3</option>
+        </select>
+    </div>
+
+    <app-selecionar-indicadores-table body 
+    [indicadoresRegistrados]="GetIndicadoresRegistrados()" ></app-selecionar-indicadores-table>
+
+</app-general-page>
+
